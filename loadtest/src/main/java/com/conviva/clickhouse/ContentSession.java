@@ -97,44 +97,49 @@ public class ContentSession {
     public int switch_justJoinedAndLifeJoinTimeMsIsAccurate;
     public int switch_isEndedPlay;
     public int switch_isEnded;
-    public String switch_isEndedPlayAndLifeAverageBitrateKbpsGT0;
-    public String switch_isVideoStartFailure;
+    public int switch_isEndedPlayAndLifeAverageBitrateKbpsGT0;
+    public int switch_isVideoStartFailure;
     public String switch_videoStartFailureErrors;
-    public String switch_isExitBeforeVideoStart;
-    public String switch_isVideoPlaybackFailure;
-    public String switch_isVideoStartSave;
+    public int switch_isExitBeforeVideoStart;
+    public int switch_isVideoPlaybackFailure;
+    public int switch_isVideoStartSave;
     public String switch_videoPlaybackFailureErrors;
-    public String switch_isAttempt;
-    public String switch_playingTimeMs;
-    public String switch_rebufferingTimeMs;
-    public String switch_networkRebufferingTimeMs;
-    public String switch_rebufferingDuringAdsMs;
-    public String switch_adRelatedBufferingMs;
-    public String switch_bitrateBytes;
-    public String switch_bitrateTimeMs;
-    public String switch_framesLoaded;
-    public String switch_framesPlayingTimeMs;
-    public String switch_seekJoinTimeMs;
-    public String switch_seekJoinCount;
-    public String switch_isVideoPlaybackFailureBusiness;
-    public String switch_isVideoPlaybackFailureTech;
-    public String switch_isVideoStartFailureBusiness;
-    public String switch_isVideoStartFailureTech;
+    public int switch_isAttempt;
+    public int switch_playingTimeMs;
+    public int switch_rebufferingTimeMs;
+    public int switch_networkRebufferingTimeMs;
+    public int switch_rebufferingDuringAdsMs;
+    public int switch_adRelatedBufferingMs;
+    public long switch_bitrateBytes;
+    public int switch_bitrateTimeMs;
+    public int switch_framesLoaded;
+    public int switch_framesPlayingTimeMs;
+    public int switch_seekJoinTimeMs;
+    public int switch_seekJoinCount;
+    public String switch_pcpBuckets1Min;
+    public long switch_pcpIntervals;
+    public int switch_rebufferingTimeMsRaw;
+    public int switch_networkRebufferingTimeMsRaw;
+    public int switch_isVideoPlaybackFailureBusiness;
+    public int switch_isVideoPlaybackFailureTech;
+    public int switch_isVideoStartFailureBusiness;
+    public int switch_isVideoStartFailureTech;
     public String switch_videoPlaybackFailureErrorsBusiness;
     public String switch_videoPlaybackFailureErrorsTech;
     public String switch_videoStartFailureErrorsBusiness;
     public String switch_videoStartFailureErrorsTech;
-    public String switch_adRequested;
-    public String bucket_sessionTimeMs;
-    public String bucket_playingTimeMs;
-    public String bucket_bufferingTimeMs;
-    public String bucket_networkBufferingTimeMs;
-    public String bucket_rebufferingRatioPct;
-    public String bucket_networkRebufferingRatioPct;
-    public String bucket_averageBitrateKbps;
-    public String bucket_seekJoinTimeMs;
-    public String bucket_averageFrameRate;
-    public String bucket_contentWatchedPct;
+    public int switch_adRequested;
+    public int bucket_sessionTimeMs;
+    public int bucket_joinTimeMs;
+    public int bucket_playingTimeMs;
+    public int bucket_bufferingTimeMs;
+    public int bucket_networkBufferingTimeMs;
+    public float bucket_rebufferingRatioPct;
+    public float bucket_networkRebufferingRatioPct;
+    public int bucket_averageBitrateKbps;
+    public int bucket_seekJoinTimeMs;
+    public int bucket_averageFrameRate;
+    public float bucket_contentWatchedPct;
 
     public Map<String, String> tags = new HashMap<>();
 
@@ -405,7 +410,7 @@ public class ContentSession {
         this.interval_startTimeMs = interval_startTimeMs;
     }
 
-    public void setSwitch_resourceId(String switch_resourceId) {
+    public void setSwitch_resourceId(int switch_resourceId) {
         this.switch_resourceId = switch_resourceId;
     }
 
@@ -413,31 +418,31 @@ public class ContentSession {
         this.switch_cdn = switch_cdn;
     }
 
-    public void setSwitch_justJoined(String switch_justJoined) {
+    public void setSwitch_justJoined(int switch_justJoined) {
         this.switch_justJoined = switch_justJoined;
     }
 
-    public void setSwitch_hasJoined(String switch_hasJoined) {
+    public void setSwitch_hasJoined(int switch_hasJoined) {
         this.switch_hasJoined = switch_hasJoined;
     }
 
-    public void setSwitch_justJoinedAndLifeJoinTimeMsIsAccurate(String switch_justJoinedAndLifeJoinTimeMsIsAccurate) {
+    public void setSwitch_justJoinedAndLifeJoinTimeMsIsAccurate(int switch_justJoinedAndLifeJoinTimeMsIsAccurate) {
         this.switch_justJoinedAndLifeJoinTimeMsIsAccurate = switch_justJoinedAndLifeJoinTimeMsIsAccurate;
     }
 
-    public void setSwitch_isEndedPlay(String switch_isEndedPlay) {
+    public void setSwitch_isEndedPlay(int switch_isEndedPlay) {
         this.switch_isEndedPlay = switch_isEndedPlay;
     }
 
-    public void setSwitch_isEnded(String switch_isEnded) {
+    public void setSwitch_isEnded(int switch_isEnded) {
         this.switch_isEnded = switch_isEnded;
     }
 
-    public void setSwitch_isEndedPlayAndLifeAverageBitrateKbpsGT0(String switch_isEndedPlayAndLifeAverageBitrateKbpsGT0) {
+    public void setSwitch_isEndedPlayAndLifeAverageBitrateKbpsGT0(int switch_isEndedPlayAndLifeAverageBitrateKbpsGT0) {
         this.switch_isEndedPlayAndLifeAverageBitrateKbpsGT0 = switch_isEndedPlayAndLifeAverageBitrateKbpsGT0;
     }
 
-    public void setSwitch_isVideoStartFailure(String switch_isVideoStartFailure) {
+    public void setSwitch_isVideoStartFailure(int switch_isVideoStartFailure) {
         this.switch_isVideoStartFailure = switch_isVideoStartFailure;
     }
 
@@ -445,15 +450,15 @@ public class ContentSession {
         this.switch_videoStartFailureErrors = switch_videoStartFailureErrors;
     }
 
-    public void setSwitch_isExitBeforeVideoStart(String switch_isExitBeforeVideoStart) {
+    public void setSwitch_isExitBeforeVideoStart(int switch_isExitBeforeVideoStart) {
         this.switch_isExitBeforeVideoStart = switch_isExitBeforeVideoStart;
     }
 
-    public void setSwitch_isVideoPlaybackFailure(String switch_isVideoPlaybackFailure) {
+    public void setSwitch_isVideoPlaybackFailure(int switch_isVideoPlaybackFailure) {
         this.switch_isVideoPlaybackFailure = switch_isVideoPlaybackFailure;
     }
 
-    public void setSwitch_isVideoStartSave(String switch_isVideoStartSave) {
+    public void setSwitch_isVideoStartSave(int switch_isVideoStartSave) {
         this.switch_isVideoStartSave = switch_isVideoStartSave;
     }
 
@@ -461,67 +466,83 @@ public class ContentSession {
         this.switch_videoPlaybackFailureErrors = switch_videoPlaybackFailureErrors;
     }
 
-    public void setSwitch_isAttempt(String switch_isAttempt) {
+    public void setSwitch_isAttempt(int switch_isAttempt) {
         this.switch_isAttempt = switch_isAttempt;
     }
 
-    public void setSwitch_playingTimeMs(String switch_playingTimeMs) {
+    public void setSwitch_playingTimeMs(int switch_playingTimeMs) {
         this.switch_playingTimeMs = switch_playingTimeMs;
     }
 
-    public void setSwitch_rebufferingTimeMs(String switch_rebufferingTimeMs) {
+    public void setSwitch_rebufferingTimeMs(int switch_rebufferingTimeMs) {
         this.switch_rebufferingTimeMs = switch_rebufferingTimeMs;
     }
 
-    public void setSwitch_networkRebufferingTimeMs(String switch_networkRebufferingTimeMs) {
+    public void setSwitch_networkRebufferingTimeMs(int switch_networkRebufferingTimeMs) {
         this.switch_networkRebufferingTimeMs = switch_networkRebufferingTimeMs;
     }
 
-    public void setSwitch_rebufferingDuringAdsMs(String switch_rebufferingDuringAdsMs) {
+    public void setSwitch_rebufferingDuringAdsMs(int switch_rebufferingDuringAdsMs) {
         this.switch_rebufferingDuringAdsMs = switch_rebufferingDuringAdsMs;
     }
 
-    public void setSwitch_adRelatedBufferingMs(String switch_adRelatedBufferingMs) {
+    public void setSwitch_adRelatedBufferingMs(int switch_adRelatedBufferingMs) {
         this.switch_adRelatedBufferingMs = switch_adRelatedBufferingMs;
     }
 
-    public void setSwitch_bitrateBytes(String switch_bitrateBytes) {
+    public void setSwitch_bitrateBytes(long switch_bitrateBytes) {
         this.switch_bitrateBytes = switch_bitrateBytes;
     }
 
-    public void setSwitch_bitrateTimeMs(String switch_bitrateTimeMs) {
+    public void setSwitch_bitrateTimeMs(int switch_bitrateTimeMs) {
         this.switch_bitrateTimeMs = switch_bitrateTimeMs;
     }
 
-    public void setSwitch_framesLoaded(String switch_framesLoaded) {
+    public void setSwitch_framesLoaded(int switch_framesLoaded) {
         this.switch_framesLoaded = switch_framesLoaded;
     }
 
-    public void setSwitch_framesPlayingTimeMs(String switch_framesPlayingTimeMs) {
+    public void setSwitch_framesPlayingTimeMs(int switch_framesPlayingTimeMs) {
         this.switch_framesPlayingTimeMs = switch_framesPlayingTimeMs;
     }
 
-    public void setSwitch_seekJoinTimeMs(String switch_seekJoinTimeMs) {
+    public void setSwitch_seekJoinTimeMs(int switch_seekJoinTimeMs) {
         this.switch_seekJoinTimeMs = switch_seekJoinTimeMs;
     }
 
-    public void setSwitch_seekJoinCount(String switch_seekJoinCount) {
+    public void setSwitch_seekJoinCount(int switch_seekJoinCount) {
         this.switch_seekJoinCount = switch_seekJoinCount;
     }
 
-    public void setSwitch_isVideoPlaybackFailureBusiness(String switch_isVideoPlaybackFailureBusiness) {
+    public void setSwitch_pcpBuckets1Min(String switch_pcpBuckets1Min) {
+        this.switch_pcpBuckets1Min = switch_pcpBuckets1Min;
+    }
+
+    public void setSwitch_pcpIntervals(long switch_pcpIntervals) {
+        this.switch_pcpIntervals = switch_pcpIntervals;
+    }
+
+    public void setSwitch_rebufferingTimeMsRaw(int switch_rebufferingTimeMsRaw) {
+        this.switch_rebufferingTimeMsRaw = switch_rebufferingTimeMsRaw;
+    }
+
+    public void setSwitch_networkRebufferingTimeMsRaw(int switch_networkRebufferingTimeMsRaw) {
+        this.switch_networkRebufferingTimeMsRaw = switch_networkRebufferingTimeMsRaw;
+    }
+
+    public void setSwitch_isVideoPlaybackFailureBusiness(int switch_isVideoPlaybackFailureBusiness) {
         this.switch_isVideoPlaybackFailureBusiness = switch_isVideoPlaybackFailureBusiness;
     }
 
-    public void setSwitch_isVideoPlaybackFailureTech(String switch_isVideoPlaybackFailureTech) {
+    public void setSwitch_isVideoPlaybackFailureTech(int switch_isVideoPlaybackFailureTech) {
         this.switch_isVideoPlaybackFailureTech = switch_isVideoPlaybackFailureTech;
     }
 
-    public void setSwitch_isVideoStartFailureBusiness(String switch_isVideoStartFailureBusiness) {
+    public void setSwitch_isVideoStartFailureBusiness(int switch_isVideoStartFailureBusiness) {
         this.switch_isVideoStartFailureBusiness = switch_isVideoStartFailureBusiness;
     }
 
-    public void setSwitch_isVideoStartFailureTech(String switch_isVideoStartFailureTech) {
+    public void setSwitch_isVideoStartFailureTech(int switch_isVideoStartFailureTech) {
         this.switch_isVideoStartFailureTech = switch_isVideoStartFailureTech;
     }
 
@@ -541,47 +562,51 @@ public class ContentSession {
         this.switch_videoStartFailureErrorsTech = switch_videoStartFailureErrorsTech;
     }
 
-    public void setSwitch_adRequested(String switch_adRequested) {
+    public void setSwitch_adRequested(int switch_adRequested) {
         this.switch_adRequested = switch_adRequested;
     }
 
-    public void setBucket_sessionTimeMs(String bucket_sessionTimeMs) {
+    public void setBucket_sessionTimeMs(int bucket_sessionTimeMs) {
         this.bucket_sessionTimeMs = bucket_sessionTimeMs;
     }
 
-    public void setBucket_playingTimeMs(String bucket_playingTimeMs) {
+    public void setBucket_joinTimeMs(int bucket_joinTimeMs) {
+        this.bucket_joinTimeMs = bucket_joinTimeMs;
+    }
+
+    public void setBucket_playingTimeMs(int bucket_playingTimeMs) {
         this.bucket_playingTimeMs = bucket_playingTimeMs;
     }
 
-    public void setBucket_bufferingTimeMs(String bucket_bufferingTimeMs) {
+    public void setBucket_bufferingTimeMs(int bucket_bufferingTimeMs) {
         this.bucket_bufferingTimeMs = bucket_bufferingTimeMs;
     }
 
-    public void setBucket_networkBufferingTimeMs(String bucket_networkBufferingTimeMs) {
+    public void setBucket_networkBufferingTimeMs(int bucket_networkBufferingTimeMs) {
         this.bucket_networkBufferingTimeMs = bucket_networkBufferingTimeMs;
     }
 
-    public void setBucket_rebufferingRatioPct(String bucket_rebufferingRatioPct) {
+    public void setBucket_rebufferingRatioPct(float bucket_rebufferingRatioPct) {
         this.bucket_rebufferingRatioPct = bucket_rebufferingRatioPct;
     }
 
-    public void setBucket_networkRebufferingRatioPct(String bucket_networkRebufferingRatioPct) {
+    public void setBucket_networkRebufferingRatioPct(float bucket_networkRebufferingRatioPct) {
         this.bucket_networkRebufferingRatioPct = bucket_networkRebufferingRatioPct;
     }
 
-    public void setBucket_averageBitrateKbps(String bucket_averageBitrateKbps) {
+    public void setBucket_averageBitrateKbps(int bucket_averageBitrateKbps) {
         this.bucket_averageBitrateKbps = bucket_averageBitrateKbps;
     }
 
-    public void setBucket_seekJoinTimeMs(String bucket_seekJoinTimeMs) {
+    public void setBucket_seekJoinTimeMs(int bucket_seekJoinTimeMs) {
         this.bucket_seekJoinTimeMs = bucket_seekJoinTimeMs;
     }
 
-    public void setBucket_averageFrameRate(String bucket_averageFrameRate) {
+    public void setBucket_averageFrameRate(int bucket_averageFrameRate) {
         this.bucket_averageFrameRate = bucket_averageFrameRate;
     }
 
-    public void setBucket_contentWatchedPct(String bucket_contentWatchedPct) {
+    public void setBucket_contentWatchedPct(float bucket_contentWatchedPct) {
         this.bucket_contentWatchedPct = bucket_contentWatchedPct;
     }
 
@@ -683,6 +708,10 @@ public class ContentSession {
                 .append(switch_framesPlayingTimeMs).append(DEFAULT_SEPARATOR)
                 .append(switch_seekJoinTimeMs).append(DEFAULT_SEPARATOR)
                 .append(switch_seekJoinCount).append(DEFAULT_SEPARATOR)
+                .append(switch_pcpBuckets1Min).append(DEFAULT_SEPARATOR)
+                .append(switch_pcpIntervals).append(DEFAULT_SEPARATOR)
+                .append(switch_rebufferingTimeMsRaw).append(DEFAULT_SEPARATOR)
+                .append(switch_networkRebufferingTimeMsRaw).append(DEFAULT_SEPARATOR)
                 .append(switch_isVideoPlaybackFailureBusiness).append(DEFAULT_SEPARATOR)
                 .append(switch_isVideoPlaybackFailureTech).append(DEFAULT_SEPARATOR)
                 .append(switch_isVideoStartFailureBusiness).append(DEFAULT_SEPARATOR)
@@ -693,6 +722,7 @@ public class ContentSession {
                 .append(switch_videoStartFailureErrorsTech).append(DEFAULT_SEPARATOR)
                 .append(switch_adRequested).append(DEFAULT_SEPARATOR)
                 .append(bucket_sessionTimeMs).append(DEFAULT_SEPARATOR)
+                .append(bucket_joinTimeMs).append(DEFAULT_SEPARATOR)
                 .append(bucket_playingTimeMs).append(DEFAULT_SEPARATOR)
                 .append(bucket_bufferingTimeMs).append(DEFAULT_SEPARATOR)
                 .append(bucket_networkBufferingTimeMs).append(DEFAULT_SEPARATOR)

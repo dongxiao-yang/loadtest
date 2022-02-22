@@ -22,9 +22,9 @@ public class ContentSessionToTSVMap {
     public static void main(String[] args) {
 
 //        String jsonfilename = "/Users/dyang/part-00002-64edcea8-84f4-4264-8c2f-55bc2237fe56.c000.txt";
-        String jsonfilename = "/Users/dyang/Documents/workspace/loadtest/loadtest/20220116_hour";
+        String jsonfilename = "/Users/dyang/Documents/workspace/loadtest/loadtest/ctsession";
 
-        ObjectMapper objectMapper = new ObjectMapper();
+//        ObjectMapper objectMapper = new ObjectMapper();
         try {
             LineNumberReader lineReader = new LineNumberReader(new FileReader(jsonfilename));
 
@@ -146,7 +146,7 @@ public class ContentSessionToTSVMap {
             String head = sb.toString();
 
 
-            PrintWriter writer = new PrintWriter(new File("PII_map_20220116.tsv"));
+            PrintWriter writer = new PrintWriter(new File("contentSession.tsv"));
 
             writer.write(head);
 
@@ -203,270 +203,346 @@ public class ContentSessionToTSVMap {
                     ("ipType".equals(nodeName)) {
                         cs.setIpType(valueStr);
                     } else if
-                    ("geo_continent".equals(nodeName)) {
+                    ("geo.continent".equals(nodeName)) {
                         cs.setGeo_continent(Long.parseLong(valueStr));
                     } else if
-                    ("geo_country".equals(nodeName)) {
+                    ("geo.country".equals(nodeName)) {
                         cs.setGeo_country(Long.parseLong(valueStr));
                     } else if
-                    ("geo_state".equals(nodeName)) {
+                    ("geo.state".equals(nodeName)) {
                         cs.setGeo_state(Long.parseLong(valueStr));
                     } else if
-                    ("geo_city".equals(nodeName)) {
+                    ("geo.city".equals(nodeName)) {
                         cs.setGeo_city(Long.parseLong(valueStr));
                     } else if
-                    ("geo_dma".equals(nodeName)) {
+                    ("geo.dma".equals(nodeName)) {
                         cs.setGeo_dma(Integer.parseInt(valueStr));
                     } else if
-                    ("geo_asn".equals(nodeName)) {
+                    ("geo.asn".equals(nodeName)) {
                         cs.setGeo_asn(Integer.parseInt(valueStr));
                     } else if
-                    ("geo_isp".equals(nodeName)) {
+                    ("geo.isp".equals(nodeName)) {
                         cs.setGeo_isp(Integer.parseInt(valueStr));
                     } else if
-                    ("geo_postalCode".equals(nodeName)) {
+                    ("geo.postalCode".equals(nodeName)) {
                         cs.setGeo_postalCode(valueStr);
                     } else if
-                    ("life_firstReceivedTimeMs".equals(nodeName)) {
+                    ("life.firstReceivedTimeMs".equals(nodeName)) {
                         cs.setLife_firstReceivedTimeMs(Long.parseLong(valueStr));
                     } else if
-                    ("life_latestReceivedTimeMs".equals(nodeName)) {
+                    ("life.latestReceivedTimeMs".equals(nodeName)) {
                         cs.setLife_latestReceivedTimeMs(Long.parseLong(valueStr));
                     } else if
-                    ("life_sessionTimeMs".equals(nodeName)) {
+                    ("life.sessionTimeMs".equals(nodeName)) {
                         cs.setLife_sessionTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_joinTimeMs".equals(nodeName)) {
+                    ("life.joinTimeMs".equals(nodeName)) {
                         cs.setLife_joinTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_playingTimeMs".equals(nodeName)) {
+                    ("life.playingTimeMs".equals(nodeName)) {
                         cs.setLife_playingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_bufferingTimeMs".equals(nodeName)) {
+                    ("life.bufferingTimeMs".equals(nodeName)) {
                         cs.setLife_bufferingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_networkBufferingTimeMs".equals(nodeName)) {
+                    ("life.networkBufferingTimeMs".equals(nodeName)) {
                         cs.setLife_networkBufferingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_rebufferingRatioPct".equals(nodeName)) {
+                    ("life.rebufferingRatioPct".equals(nodeName)) {
                         cs.setLife_rebufferingRatioPct(Float.parseFloat(valueStr));
                     } else if
-                    ("life_networkRebufferingRatioPct".equals(nodeName)) {
+                    ("life.networkRebufferingRatioPct".equals(nodeName)) {
                         cs.setLife_networkRebufferingRatioPct(Float.parseFloat(valueStr));
                     } else if
-                    ("life_averageBitrateKbps".equals(nodeName)) {
+                    ("life.averageBitrateKbps".equals(nodeName)) {
                         cs.setLife_averageBitrateKbps(Integer.parseInt(valueStr));
                     } else if
-                    ("life_seekJoinTimeMs".equals(nodeName)) {
+                    ("life.seekJoinTimeMs".equals(nodeName)) {
                         cs.setLife_seekJoinTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_seekJoinCount".equals(nodeName)) {
+                    ("life.seekJoinCount".equals(nodeName)) {
                         cs.setLife_seekJoinCount(Integer.parseInt(valueStr));
                     } else if
-                    ("life_bufferingEvents".equals(nodeName)) {
+                    ("life.bufferingEvents".equals(nodeName)) {
                         cs.setLife_bufferingEvents(Integer.parseInt(valueStr));
                     } else if
-                    ("life_networkRebufferingEvents".equals(nodeName)) {
+                    ("life.networkRebufferingEvents".equals(nodeName)) {
                         cs.setLife_networkRebufferingEvents(Integer.parseInt(valueStr));
                     } else if
-                    ("life_bitrateKbps".equals(nodeName)) {
+                    ("life.bitrateKbps".equals(nodeName)) {
                         cs.setLife_bitrateKbps(Integer.parseInt(valueStr));
                     } else if
-                    ("life_contentWatchedTimeMs".equals(nodeName)) {
+                    ("life.contentWatchedTimeMs".equals(nodeName)) {
                         cs.setLife_contentWatchedTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_contentWatchedPct".equals(nodeName)) {
+                    ("life.contentWatchedPct".equals(nodeName)) {
                         cs.setLife_contentWatchedPct(Float.parseFloat(valueStr));
                     } else if
-                    ("life_averageFrameRate".equals(nodeName)) {
+                    ("life.averageFrameRate".equals(nodeName)) {
                         cs.setLife_averageFrameRate(Integer.parseInt(valueStr));
                     } else if
-                    ("life_renderingQuality".equals(nodeName)) {
+                    ("life.renderingQuality".equals(nodeName)) {
                         cs.setLife_renderingQuality(Integer.parseInt(valueStr));
                     } else if
-                    ("life_resourceIds".equals(nodeName)) {
+                    ("life.resourceIds".equals(nodeName)) {
                         cs.setLife_resourceIds(valueStr);
                     } else if
-                    ("life_cdns".equals(nodeName)) {
+                    ("life.cdns".equals(nodeName)) {
                         cs.setLife_cdns(valueStr);
                     } else if
-                    ("life_fatalErrorResourceIds".equals(nodeName)) {
+                    ("life.fatalErrorResourceIds".equals(nodeName)) {
                         cs.setLife_fatalErrorResourceIds(valueStr);
                     } else if
-                    ("life_fatalErrorCdns".equals(nodeName)) {
+                    ("life.fatalErrorCdns".equals(nodeName)) {
                         cs.setLife_fatalErrorCdns(valueStr);
                     } else if
-                    ("life_latestErrorResourceId".equals(nodeName)) {
+                    ("life.latestErrorResourceId".equals(nodeName)) {
                         cs.setLife_latestErrorResourceId(valueStr);
                     } else if
-                    ("life_latestErrorCdn".equals(nodeName)) {
+                    ("life.latestErrorCdn".equals(nodeName)) {
                         cs.setLife_latestErrorCdn(valueStr);
                     } else if
-                    ("life_joinResourceIds".equals(nodeName)) {
+                    ("life.joinResourceIds".equals(nodeName)) {
                         cs.setLife_joinResourceIds(valueStr);
                     } else if
-                    ("life_joinCdns".equals(nodeName)) {
+                    ("life.joinCdns".equals(nodeName)) {
                         cs.setLife_joinCdns(valueStr);
                     } else if
-                    ("life_lastJoinCdn".equals(nodeName)) {
+                    ("life.lastJoinCdn".equals(nodeName)) {
                         cs.setLife_lastJoinCdn(valueStr);
                     } else if
-                    ("life_lastCdn".equals(nodeName)) {
+                    ("life.lastCdn".equals(nodeName)) {
                         cs.setLife_lastCdn(valueStr);
                     } else if
-                    ("life_lastJoinResourceId".equals(nodeName)) {
+                    ("life.lastJoinResourceId".equals(nodeName)) {
                         cs.setLife_lastJoinResourceId(Integer.parseInt(valueStr));
                     } else if
-                    ("life_isVideoPlaybackFailure".equals(nodeName)) {
+                    ("life.isVideoPlaybackFailure".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_isVideoPlaybackFailure(i);
                     } else if
-                    ("life_isVideoStartFailure".equals(nodeName)) {
+                    ("life.isVideoStartFailure".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_isVideoStartFailure(i);
                     } else if
-                    ("life_hasJoined".equals(nodeName)) {
+                    ("life.hasJoined".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_hasJoined(i);
                     } else if
-                    ("life_isVideoPlaybackFailureBusiness".equals(nodeName)) {
+                    ("life.isVideoPlaybackFailureBusiness".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_isVideoPlaybackFailureBusiness(i);
                     } else if
-                    ("life_isVideoPlaybackFailureTech".equals(nodeName)) {
+                    ("life.isVideoPlaybackFailureTech".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_isVideoPlaybackFailureTech(i);
                     } else if
-                    ("life_isVideoStartFailureBusiness".equals(nodeName)) {
+                    ("life.isVideoStartFailureBusiness".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_isVideoStartFailureBusiness(i);
                     } else if
-                    ("life_isVideoStartFailureTech".equals(nodeName)) {
+                    ("life.isVideoStartFailureTech".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_isVideoStartFailureTech(i);
                     } else if
-                    ("life_videoPlaybackFailureErrorsBusiness".equals(nodeName)) {
+                    ("life.videoPlaybackFailureErrorsBusiness".equals(nodeName)) {
                         cs.setLife_videoPlaybackFailureErrorsBusiness(valueStr);
                     } else if
-                    ("life_videoPlaybackFailureErrorsTech".equals(nodeName)) {
+                    ("life.videoPlaybackFailureErrorsTech".equals(nodeName)) {
                         cs.setLife_videoPlaybackFailureErrorsTech(valueStr);
                     } else if
-                    ("life_videoStartFailureErrorsBusiness".equals(nodeName)) {
+                    ("life.videoStartFailureErrorsBusiness".equals(nodeName)) {
                         cs.setLife_videoStartFailureErrorsBusiness(valueStr);
                     } else if
-                    ("life_videoStartFailureErrorsTech".equals(nodeName)) {
+                    ("life.videoStartFailureErrorsTech".equals(nodeName)) {
                         cs.setLife_videoStartFailureErrorsTech(valueStr);
                     } else if
-                    ("life_exitDuringPreRoll".equals(nodeName)) {
+                    ("life.exitDuringPreRoll".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
                         cs.setLife_exitDuringPreRoll(i);
                     } else if
-                    ("life_waitTimePrerollExitMs".equals(nodeName)) {
+                    ("life.waitTimePrerollExitMs".equals(nodeName)) {
                         cs.setLife_waitTimePrerollExitMs(Integer.parseInt(valueStr));
                     } else if
-                    ("life_lastCDNGroupId".equals(nodeName)) {
+                    ("life.lastCDNGroupId".equals(nodeName)) {
                         cs.setLife_lastCDNGroupId(valueStr);
                     } else if
-                    ("life_lastCDNEdgeServer".equals(nodeName)) {
+                    ("life.lastCDNEdgeServer".equals(nodeName)) {
                         cs.setLife_lastCDNEdgeServer(valueStr);
                     } else if
-                    ("interval_startTimeMs".equals(nodeName)) {
+                    ("interval.startTimeMs".equals(nodeName)) {
                         cs.setInterval_startTimeMs(Long.parseLong(valueStr));
                     } else if
-                    ("switch_resourceId".equals(nodeName)) {
+                    ("switch.resourceId".equals(nodeName)) {
+                        cs.setSwitch_resourceId(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_cdn".equals(nodeName)) {
+                    ("switch.cdn".equals(nodeName)) {
+                        cs.setSwitch_cdn(valueStr);
                     } else if
-                    ("switch_justJoined".equals(nodeName)) {
+                    ("switch.justJoined".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_justJoined(i);
                     } else if
-                    ("switch_hasJoined".equals(nodeName)) {
+                    ("switch.hasJoined".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_hasJoined(i);
                     } else if
-                    ("switch_justJoinedAndLifeJoinTimeMsIsAccurate".equals(nodeName)) {
+                    ("switch.justJoinedAndLifeJoinTimeMsIsAccurate".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_justJoinedAndLifeJoinTimeMsIsAccurate(i);
                     } else if
-                    ("switch_isEndedPlay".equals(nodeName)) {
+                    ("switch.isEndedPlay".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isEndedPlay(i);
                     } else if
-                    ("switch_isEnded".equals(nodeName)) {
+                    ("switch.isEnded".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isEnded(i);
                     } else if
-                    ("switch_isEndedPlayAndLifeAverageBitrateKbpsGT0".equals(nodeName)) {
+                    ("switch.isEndedPlayAndLifeAverageBitrateKbpsGT0".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isEndedPlayAndLifeAverageBitrateKbpsGT0(i);
                     } else if
-                    ("switch_isVideoStartFailure".equals(nodeName)) {
+                    ("switch.isVideoStartFailure".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isVideoStartFailure(i);
                     } else if
-                    ("switch_videoStartFailureErrors".equals(nodeName)) {
+                    ("switch.videoStartFailureErrors".equals(nodeName)) {
+                        cs.setSwitch_videoStartFailureErrors(valueStr);
                     } else if
-                    ("switch_isExitBeforeVideoStart".equals(nodeName)) {
+                    ("switch.isExitBeforeVideoStart".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isExitBeforeVideoStart(i);
                     } else if
-                    ("switch_isVideoPlaybackFailure".equals(nodeName)) {
+                    ("switch.isVideoPlaybackFailure".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isVideoPlaybackFailure(i);
                     } else if
-                    ("switch_isVideoStartSave".equals(nodeName)) {
+                    ("switch.isVideoStartSave".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isVideoStartSave(i);
                     } else if
-                    ("switch_videoPlaybackFailureErrors".equals(nodeName)) {
+                    ("switch.videoPlaybackFailureErrors".equals(nodeName)) {
+                        cs.setSwitch_videoPlaybackFailureErrors(valueStr);
                     } else if
-                    ("switch_isAttempt".equals(nodeName)) {
+                    ("switch.isAttempt".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isAttempt(i);
                     } else if
-                    ("switch_playingTimeMs".equals(nodeName)) {
+                    ("switch.playingTimeMs".equals(nodeName)) {
+                        cs.setSwitch_playingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_rebufferingTimeMs".equals(nodeName)) {
+                    ("switch.rebufferingTimeMs".equals(nodeName)) {
+                        cs.setSwitch_rebufferingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_networkRebufferingTimeMs".equals(nodeName)) {
+                    ("switch.networkRebufferingTimeMs".equals(nodeName)) {
+                        cs.setSwitch_networkRebufferingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_rebufferingDuringAdsMs".equals(nodeName)) {
+                    ("switch.rebufferingDuringAdsMs".equals(nodeName)) {
+                        cs.setSwitch_rebufferingDuringAdsMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_adRelatedBufferingMs".equals(nodeName)) {
+                    ("switch.adRelatedBufferingMs".equals(nodeName)) {
+                        cs.setSwitch_adRelatedBufferingMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_bitrateBytes".equals(nodeName)) {
+                    ("switch.bitrateBytes".equals(nodeName)) {
+                        cs.setSwitch_bitrateBytes(Long.parseLong(valueStr));
                     } else if
-                    ("switch_bitrateTimeMs".equals(nodeName)) {
+                    ("switch.bitrateTimeMs".equals(nodeName)) {
+                        cs.setSwitch_bitrateTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_framesLoaded".equals(nodeName)) {
+                    ("switch.framesLoaded".equals(nodeName)) {
+                        cs.setSwitch_framesLoaded(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_framesPlayingTimeMs".equals(nodeName)) {
+                    ("switch.framesPlayingTimeMs".equals(nodeName)) {
+                        cs.setSwitch_framesPlayingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_seekJoinTimeMs".equals(nodeName)) {
+                    ("switch.seekJoinTimeMs".equals(nodeName)) {
+                        cs.setSwitch_seekJoinTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_seekJoinCount".equals(nodeName)) {
+                    ("switch.seekJoinCount".equals(nodeName)) {
+                        cs.setSwitch_seekJoinCount(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_isVideoPlaybackFailureBusiness".equals(nodeName)) {
+                    ("switch.pcpBuckets1Min".equals(nodeName)) {
+                        cs.setSwitch_pcpBuckets1Min(valueStr);
                     } else if
-                    ("switch_isVideoPlaybackFailureTech".equals(nodeName)) {
+                    ("switch.pcpIntervals".equals(nodeName)) {
+                        cs.setSwitch_pcpIntervals(Long.parseLong(valueStr));
                     } else if
-                    ("switch_isVideoStartFailureBusiness".equals(nodeName)) {
+                    ("switch.rebufferingTimeMsRaw".equals(nodeName)) {
+                        cs.setSwitch_rebufferingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_isVideoStartFailureTech".equals(nodeName)) {
+                    ("switch.networkRebufferingTimeMsRaw".equals(nodeName)) {
+                        cs.setSwitch_networkRebufferingTimeMsRaw(Integer.parseInt(valueStr));
                     } else if
-                    ("switch_videoPlaybackFailureErrorsBusiness".equals(nodeName)) {
+                    ("switch.isVideoPlaybackFailureBusiness".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isVideoPlaybackFailureBusiness(i);
                     } else if
-                    ("switch_videoPlaybackFailureErrorsTech".equals(nodeName)) {
+                    ("switch.isVideoPlaybackFailureTech".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setLife_isVideoPlaybackFailureTech(i);
                     } else if
-                    ("switch_videoStartFailureErrorsBusiness".equals(nodeName)) {
+                    ("switch.isVideoStartFailureBusiness".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isVideoStartFailureBusiness(i);
                     } else if
-                    ("switch_videoStartFailureErrorsTech".equals(nodeName)) {
+                    ("switch.isVideoStartFailureTech".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_isVideoStartFailureTech(i);
                     } else if
-                    ("switch_adRequested".equals(nodeName)) {
+                    ("switch.videoPlaybackFailureErrorsBusiness".equals(nodeName)) {
+                        cs.setSwitch_videoPlaybackFailureErrorsBusiness(valueStr);
                     } else if
-                    ("bucket_sessionTimeMs".equals(nodeName)) {
+                    ("switch.videoPlaybackFailureErrorsTech".equals(nodeName)) {
+                        cs.setSwitch_videoPlaybackFailureErrorsTech(valueStr);
                     } else if
-                    ("bucket_playingTimeMs".equals(nodeName)) {
+                    ("switch.videoStartFailureErrorsBusiness".equals(nodeName)) {
+                        cs.setSwitch_videoStartFailureErrorsBusiness(valueStr);
                     } else if
-                    ("bucket_bufferingTimeMs".equals(nodeName)) {
+                    ("switch.videoStartFailureErrorsTech".equals(nodeName)) {
+                        cs.setSwitch_videoStartFailureErrorsTech(valueStr);
                     } else if
-                    ("bucket_networkBufferingTimeMs".equals(nodeName)) {
+                    ("switch.adRequested".equals(nodeName)) {
+                        int i = "true".equals(valueStr) ? 1 : 0;
+                        cs.setSwitch_adRequested(i);
                     } else if
-                    ("bucket_rebufferingRatioPct".equals(nodeName)) {
+                    ("bucket.sessionTimeMs".equals(nodeName)) {
+                        cs.setBucket_sessionTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("bucket_networkRebufferingRatioPct".equals(nodeName)) {
+                    ("bucket.joinTimeMs".equals(nodeName)) {
+                        cs.setBucket_joinTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("bucket_averageBitrateKbps".equals(nodeName)) {
+                    ("bucket.playingTimeMs".equals(nodeName)) {
+                        cs.setBucket_playingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("bucket_seekJoinTimeMs".equals(nodeName)) {
+                    ("bucket.bufferingTimeMs".equals(nodeName)) {
+                        cs.setBucket_bufferingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("bucket_averageFrameRate".equals(nodeName)) {
+                    ("bucket.networkBufferingTimeMs".equals(nodeName)) {
+                        cs.setBucket_networkBufferingTimeMs(Integer.parseInt(valueStr));
                     } else if
-                    ("bucket_contentWatchedPct".equals(nodeName)) {
+                    ("bucket.rebufferingRatioPct".equals(nodeName)) {
+                        cs.setBucket_rebufferingRatioPct(Float.parseFloat(valueStr));
+                    } else if
+                    ("bucket.networkRebufferingRatioPct".equals(nodeName)) {
+                        cs.setBucket_networkRebufferingRatioPct(Float.parseFloat(valueStr));
+                    } else if
+                    ("bucket.averageBitrateKbps".equals(nodeName)) {
+                        cs.setBucket_averageBitrateKbps(Integer.parseInt(valueStr));
+                    } else if
+                    ("bucket.seekJoinTimeMs".equals(nodeName)) {
+                        cs.setBucket_seekJoinTimeMs(Integer.parseInt(valueStr));
+                    } else if
+                    ("bucket.averageFrameRate".equals(nodeName)) {
+                        cs.setBucket_averageFrameRate(Integer.parseInt(valueStr));
+                    } else if
+                    ("bucket.contentWatchedPct".equals(nodeName)) {
+                        cs.setBucket_contentWatchedPct(Float.parseFloat(valueStr));
                     } else if (nodeName.startsWith("tags.")) {
                         String key = quote + nodeName.substring(5) + quote;
                         tags.put(key, quote + valueStr + quote);
                     } else {
-                        logger.warn(">>> unknown field:" + jn.toString());
+//                        logger.warn(">>> unknown field:" + jn.toString());
                     }
 
 
