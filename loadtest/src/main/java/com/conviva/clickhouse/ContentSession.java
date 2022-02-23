@@ -49,7 +49,7 @@ public class ContentSession {
     public float life_contentWatchedPct;
     public int life_averageFrameRate;
     public int life_renderingQuality;
-//    public int[] life_resourceIds = new int[0];
+    //    public int[] life_resourceIds = new int[0];
 //    public String[] life_cdns = new String[0];
 //    public int[] life_fatalErrorResourceIds = new int[0];
 //    public String[] life_fatalErrorCdns = new String[0];
@@ -58,11 +58,12 @@ public class ContentSession {
     public String life_cdns = "[]";
     public String life_fatalErrorResourceIds = "[]";
     public String life_fatalErrorCdns = "[]";
-    public String life_latestErrorResourceId = "[]";
+    public int life_latestErrorResourceId;
+    public String life_latestErrorCdn;
 //    public String[] life_latestErrorCdn = new String[0];
 //    public int[] life_joinResourceIds = new int[0];
 //    public String[] life_joinCdns = new String[0];
-    public String life_latestErrorCdn = "[]";
+
     public String life_joinResourceIds = "[]";
     public String life_joinCdns = "[]";
 
@@ -76,7 +77,7 @@ public class ContentSession {
     public int life_isVideoPlaybackFailureTech;
     public int life_isVideoStartFailureBusiness;
     public int life_isVideoStartFailureTech;
-//    public String[] life_videoPlaybackFailureErrorsBusiness = new String[0];
+    //    public String[] life_videoPlaybackFailureErrorsBusiness = new String[0];
 //    public String[] life_videoPlaybackFailureErrorsTech = new String[0];
 //    public String[] life_videoStartFailureErrorsBusiness = new String[0];
 //    public String[] life_videoStartFailureErrorsTech = new String[0];
@@ -99,11 +100,11 @@ public class ContentSession {
     public int switch_isEnded;
     public int switch_isEndedPlayAndLifeAverageBitrateKbpsGT0;
     public int switch_isVideoStartFailure;
-    public String switch_videoStartFailureErrors;
+    public String switch_videoStartFailureErrors="[]";
     public int switch_isExitBeforeVideoStart;
     public int switch_isVideoPlaybackFailure;
     public int switch_isVideoStartSave;
-    public String switch_videoPlaybackFailureErrors;
+    public String switch_videoPlaybackFailureErrors="[]";
     public int switch_isAttempt;
     public int switch_playingTimeMs;
     public int switch_rebufferingTimeMs;
@@ -116,7 +117,7 @@ public class ContentSession {
     public int switch_framesPlayingTimeMs;
     public int switch_seekJoinTimeMs;
     public int switch_seekJoinCount;
-    public String switch_pcpBuckets1Min;
+    public String switch_pcpBuckets1Min = "[]";
     public long switch_pcpIntervals;
     public int switch_rebufferingTimeMsRaw;
     public int switch_networkRebufferingTimeMsRaw;
@@ -124,10 +125,10 @@ public class ContentSession {
     public int switch_isVideoPlaybackFailureTech;
     public int switch_isVideoStartFailureBusiness;
     public int switch_isVideoStartFailureTech;
-    public String switch_videoPlaybackFailureErrorsBusiness;
-    public String switch_videoPlaybackFailureErrorsTech;
-    public String switch_videoStartFailureErrorsBusiness;
-    public String switch_videoStartFailureErrorsTech;
+    public String switch_videoPlaybackFailureErrorsBusiness="[]";
+    public String switch_videoPlaybackFailureErrorsTech = "[]";
+    public String switch_videoStartFailureErrorsBusiness = "[]";
+    public String switch_videoStartFailureErrorsTech = "[]";
     public int switch_adRequested;
     public int bucket_sessionTimeMs;
     public int bucket_joinTimeMs;
@@ -318,7 +319,7 @@ public class ContentSession {
         this.life_fatalErrorCdns = life_fatalErrorCdns;
     }
 
-    public void setLife_latestErrorResourceId(String life_latestErrorResourceId) {
+    public void setLife_latestErrorResourceId(int life_latestErrorResourceId) {
         this.life_latestErrorResourceId = life_latestErrorResourceId;
     }
 
@@ -739,27 +740,22 @@ public class ContentSession {
     }
 
 
-//    static String buildClickhouseStrArray(String[]strings_column) {
-//
-//        if (strings_column != null && strings_column.length>0)
-//        {
-//            StringBuilder sb = new StringBuilder("[");
-//            for(int i=0 ; i< strings_column.length;i++)
-//            {
-//                sb.append(quote).append(strings_column[i]).append(quote);
-//                if(i!= strings_column.length-1)
-//                {
-//                    sb.append(",");
-//                }
-//            }
-//            sb.append("]");
-//            return sb.toString();
-//        }
-//        else
-//        {
-//            return "[]";
-//        }
-//    }
+    static String buildClickhouseStrArray(String[] strings_column) {
+
+        if (strings_column != null && strings_column.length > 0) {
+            StringBuilder sb = new StringBuilder("[");
+            for (int i = 0; i < strings_column.length; i++) {
+                sb.append(quote).append(strings_column[i]).append(quote);
+                if (i != strings_column.length - 1) {
+                    sb.append(",");
+                }
+            }
+            sb.append("]");
+            return sb.toString();
+        } else {
+            return "[]";
+        }
+    }
 //
 //    static String buildClickhouseIntArray(int[] ints_column) {
 //

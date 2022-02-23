@@ -19,10 +19,15 @@ public class ContentSessionToTSVMap {
     public static final String DEFAULT_LINE_END = "\n";
     public static final String quote = "'";
 
+    static String buildStringArray(String str)
+    {
+        return str.toString().replaceAll(quote,"").replaceAll("\"","\'");
+    }
+
     public static void main(String[] args) {
 
-//        String jsonfilename = "/Users/dyang/part-00002-64edcea8-84f4-4264-8c2f-55bc2237fe56.c000.txt";
-        String jsonfilename = "/Users/dyang/Documents/workspace/loadtest/loadtest/ctsession";
+        String jsonfilename = "/Users/dyang/Documents/workspace/loadtest/loadtest/contentsession/part-00049-261e47f4-9870-46ff-a653-9c3eb284a606.c000.txt";
+//        String jsonfilename = "/Users/dyang/Documents/workspace/loadtest/loadtest/ctsession";
 
 //        ObjectMapper objectMapper = new ObjectMapper();
         try {
@@ -74,6 +79,8 @@ public class ContentSessionToTSVMap {
                     .append("life_cdns").append(DEFAULT_SEPARATOR)
                     .append("life_fatalErrorResourceIds").append(DEFAULT_SEPARATOR)
                     .append("life_fatalErrorCdns").append(DEFAULT_SEPARATOR)
+                    .append("life_latestErrorResourceId").append(DEFAULT_SEPARATOR)
+                    .append("life_latestErrorCdn").append(DEFAULT_SEPARATOR)
                     .append("life_joinResourceIds").append(DEFAULT_SEPARATOR)
                     .append("life_joinCdns").append(DEFAULT_SEPARATOR)
                     .append("life_lastJoinCdn").append(DEFAULT_SEPARATOR)
@@ -121,6 +128,10 @@ public class ContentSessionToTSVMap {
                     .append("switch_framesPlayingTimeMs").append(DEFAULT_SEPARATOR)
                     .append("switch_seekJoinTimeMs").append(DEFAULT_SEPARATOR)
                     .append("switch_seekJoinCount").append(DEFAULT_SEPARATOR)
+                    .append("switch_pcpBuckets1Min").append(DEFAULT_SEPARATOR)
+                    .append("switch_pcpIntervals").append(DEFAULT_SEPARATOR)
+                    .append("switch_rebufferingTimeMsRaw").append(DEFAULT_SEPARATOR)
+                    .append("switch_networkRebufferingTimeMsRaw").append(DEFAULT_SEPARATOR)
                     .append("switch_isVideoPlaybackFailureBusiness").append(DEFAULT_SEPARATOR)
                     .append("switch_isVideoPlaybackFailureTech").append(DEFAULT_SEPARATOR)
                     .append("switch_isVideoStartFailureBusiness").append(DEFAULT_SEPARATOR)
@@ -131,6 +142,7 @@ public class ContentSessionToTSVMap {
                     .append("switch_videoStartFailureErrorsTech").append(DEFAULT_SEPARATOR)
                     .append("switch_adRequested").append(DEFAULT_SEPARATOR)
                     .append("bucket_sessionTimeMs").append(DEFAULT_SEPARATOR)
+                    .append("bucket_joinTimeMs").append(DEFAULT_SEPARATOR)
                     .append("bucket_playingTimeMs").append(DEFAULT_SEPARATOR)
                     .append("bucket_bufferingTimeMs").append(DEFAULT_SEPARATOR)
                     .append("bucket_networkBufferingTimeMs").append(DEFAULT_SEPARATOR)
@@ -165,6 +177,7 @@ public class ContentSessionToTSVMap {
 
                     String nodeName = jn.getKey();
                     String valueStr = jn.getValue().asText();
+//                    String valueStr = jn.getValue().asText().replaceAll(quote,"");
 
 
                     if ("version".equals(nodeName)) {
@@ -192,7 +205,7 @@ public class ContentSessionToTSVMap {
                         cs.setIsAd(i);
                     } else if
                     ("assetName".equals(nodeName)) {
-                        cs.setAssetName(valueStr);
+                        cs.setAssetName(valueStr.replaceAll(DEFAULT_LINE_END,""));
                     } else if
                     ("streamUrl".equals(nodeName)) {
                         cs.setStreamUrl(valueStr);
@@ -285,28 +298,29 @@ public class ContentSessionToTSVMap {
                         cs.setLife_renderingQuality(Integer.parseInt(valueStr));
                     } else if
                     ("life.resourceIds".equals(nodeName)) {
-                        cs.setLife_resourceIds(valueStr);
+                        cs.setLife_resourceIds(jn.getValue().toString());
                     } else if
                     ("life.cdns".equals(nodeName)) {
-                        cs.setLife_cdns(valueStr);
+                        cs.setLife_cdns(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.fatalErrorResourceIds".equals(nodeName)) {
-                        cs.setLife_fatalErrorResourceIds(valueStr);
+                        cs.setLife_fatalErrorResourceIds(jn.getValue().toString());
                     } else if
                     ("life.fatalErrorCdns".equals(nodeName)) {
-                        cs.setLife_fatalErrorCdns(valueStr);
+                        cs.setLife_fatalErrorCdns(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.latestErrorResourceId".equals(nodeName)) {
-                        cs.setLife_latestErrorResourceId(valueStr);
+                        cs.setLife_latestErrorResourceId(Integer.parseInt(valueStr));
                     } else if
                     ("life.latestErrorCdn".equals(nodeName)) {
                         cs.setLife_latestErrorCdn(valueStr);
                     } else if
                     ("life.joinResourceIds".equals(nodeName)) {
-                        cs.setLife_joinResourceIds(valueStr);
+                        String aaa = jn.getValue().toString();
+                        cs.setLife_joinResourceIds(jn.getValue().toString());
                     } else if
                     ("life.joinCdns".equals(nodeName)) {
-                        cs.setLife_joinCdns(valueStr);
+                        cs.setLife_joinCdns(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.lastJoinCdn".equals(nodeName)) {
                         cs.setLife_lastJoinCdn(valueStr);
@@ -346,16 +360,24 @@ public class ContentSessionToTSVMap {
                         cs.setLife_isVideoStartFailureTech(i);
                     } else if
                     ("life.videoPlaybackFailureErrorsBusiness".equals(nodeName)) {
-                        cs.setLife_videoPlaybackFailureErrorsBusiness(valueStr);
+                        cs.setLife_videoPlaybackFailureErrorsBusiness(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.videoPlaybackFailureErrorsTech".equals(nodeName)) {
-                        cs.setLife_videoPlaybackFailureErrorsTech(valueStr);
+                        cs.setLife_videoPlaybackFailureErrorsTech(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.videoStartFailureErrorsBusiness".equals(nodeName)) {
-                        cs.setLife_videoStartFailureErrorsBusiness(valueStr);
+                        cs.setLife_videoStartFailureErrorsBusiness(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.videoStartFailureErrorsTech".equals(nodeName)) {
-                        cs.setLife_videoStartFailureErrorsTech(valueStr);
+//                        if("[\"Can't load the video\"]".equals(jn.getValue().toString()))
+//                        {
+//                            String aaa = jn.getValue().toString().replaceAll(quote,"");
+//
+//                            String bbb = aaa.replaceAll("\"","\'");
+//                            String ccc = buildStringArray(jn.getValue().toString());
+//                            String ddd = ccc;
+//                        }
+                        cs.setLife_videoStartFailureErrorsTech(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.exitDuringPreRoll".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
@@ -408,7 +430,7 @@ public class ContentSessionToTSVMap {
                         cs.setSwitch_isVideoStartFailure(i);
                     } else if
                     ("switch.videoStartFailureErrors".equals(nodeName)) {
-                        cs.setSwitch_videoStartFailureErrors(valueStr);
+                        cs.setSwitch_videoStartFailureErrors(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("switch.isExitBeforeVideoStart".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
@@ -423,7 +445,7 @@ public class ContentSessionToTSVMap {
                         cs.setSwitch_isVideoStartSave(i);
                     } else if
                     ("switch.videoPlaybackFailureErrors".equals(nodeName)) {
-                        cs.setSwitch_videoPlaybackFailureErrors(valueStr);
+                        cs.setSwitch_videoPlaybackFailureErrors(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("switch.isAttempt".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
@@ -463,7 +485,7 @@ public class ContentSessionToTSVMap {
                         cs.setSwitch_seekJoinCount(Integer.parseInt(valueStr));
                     } else if
                     ("switch.pcpBuckets1Min".equals(nodeName)) {
-                        cs.setSwitch_pcpBuckets1Min(valueStr);
+                        cs.setSwitch_pcpBuckets1Min(jn.getValue().toString());
                     } else if
                     ("switch.pcpIntervals".equals(nodeName)) {
                         cs.setSwitch_pcpIntervals(Long.parseLong(valueStr));
@@ -491,16 +513,16 @@ public class ContentSessionToTSVMap {
                         cs.setSwitch_isVideoStartFailureTech(i);
                     } else if
                     ("switch.videoPlaybackFailureErrorsBusiness".equals(nodeName)) {
-                        cs.setSwitch_videoPlaybackFailureErrorsBusiness(valueStr);
+                        cs.setSwitch_videoPlaybackFailureErrorsBusiness(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("switch.videoPlaybackFailureErrorsTech".equals(nodeName)) {
-                        cs.setSwitch_videoPlaybackFailureErrorsTech(valueStr);
+                        cs.setSwitch_videoPlaybackFailureErrorsTech(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("switch.videoStartFailureErrorsBusiness".equals(nodeName)) {
-                        cs.setSwitch_videoStartFailureErrorsBusiness(valueStr);
+                        cs.setSwitch_videoStartFailureErrorsBusiness(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("switch.videoStartFailureErrorsTech".equals(nodeName)) {
-                        cs.setSwitch_videoStartFailureErrorsTech(valueStr);
+                        cs.setSwitch_videoStartFailureErrorsTech(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("switch.adRequested".equals(nodeName)) {
                         int i = "true".equals(valueStr) ? 1 : 0;
@@ -540,7 +562,7 @@ public class ContentSessionToTSVMap {
                         cs.setBucket_contentWatchedPct(Float.parseFloat(valueStr));
                     } else if (nodeName.startsWith("tags.")) {
                         String key = quote + nodeName.substring(5) + quote;
-                        tags.put(key, quote + valueStr + quote);
+                        tags.put(key, (quote + valueStr.replaceAll(quote,"") + quote).replaceAll(DEFAULT_LINE_END,""));
                     } else {
 //                        logger.warn(">>> unknown field:" + jn.toString());
                     }
@@ -549,9 +571,8 @@ public class ContentSessionToTSVMap {
                 }
 
                 cs.setTags(tags);
-
-
                 writer.write(cs.toTSV());
+//               break;
 
             }
             writer.flush();
