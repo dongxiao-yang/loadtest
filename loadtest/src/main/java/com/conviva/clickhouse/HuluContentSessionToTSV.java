@@ -3,19 +3,15 @@ package com.conviva.clickhouse;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
-import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 
 import java.io.*;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class ContentSessionToTSVMap {
+public class HuluContentSessionToTSV {
 
-    private static final Logger logger = Logger
-            .getLogger(ContentSessionToTSVMap.class);
 
     public static final char DEFAULT_SEPARATOR = '\t';
     public static final String DEFAULT_LINE_END = "\n";
@@ -44,14 +40,138 @@ public class ContentSessionToTSVMap {
         PrintWriter writer = new PrintWriter(new File(outputfile));
 
         File inputPath = new File(jsonfilename);
+        StringBuilder sb = new StringBuilder();
+        sb.append("version").append(DEFAULT_SEPARATOR)
+                .append("customerId").append(DEFAULT_SEPARATOR)
+                .append("clientId").append(DEFAULT_SEPARATOR)
+                .append("sessionId").append(DEFAULT_SEPARATOR)
+                .append("segmentId").append(DEFAULT_SEPARATOR)
+                .append("datasourceId").append(DEFAULT_SEPARATOR)
+                .append("m3_dv_hwt").append(DEFAULT_SEPARATOR)
+                .append("m3_dv_mrk").append(DEFAULT_SEPARATOR)
+                .append("isAudienceOnly").append(DEFAULT_SEPARATOR)
+                .append("isAd").append(DEFAULT_SEPARATOR)
+                .append("assetName").append(DEFAULT_SEPARATOR)
+                .append("streamUrl").append(DEFAULT_SEPARATOR)
+                .append("contentLengthMs").append(DEFAULT_SEPARATOR)
+                .append("ipType").append(DEFAULT_SEPARATOR)
+                .append("geo_continent").append(DEFAULT_SEPARATOR)
+                .append("geo_country").append(DEFAULT_SEPARATOR)
+                .append("geo_state").append(DEFAULT_SEPARATOR)
+                .append("geo_city").append(DEFAULT_SEPARATOR)
+                .append("geo_dma").append(DEFAULT_SEPARATOR)
+                .append("geo_asn").append(DEFAULT_SEPARATOR)
+                .append("geo_isp").append(DEFAULT_SEPARATOR)
+                .append("geo_postalCode").append(DEFAULT_SEPARATOR)
+                .append("life_firstReceivedTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_latestReceivedTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_sessionTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_joinTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_playingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_bufferingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_networkBufferingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_rebufferingRatioPct").append(DEFAULT_SEPARATOR)
+                .append("life_networkRebufferingRatioPct").append(DEFAULT_SEPARATOR)
+                .append("life_averageBitrateKbps").append(DEFAULT_SEPARATOR)
+                .append("life_seekJoinTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_seekJoinCount").append(DEFAULT_SEPARATOR)
+                .append("life_bufferingEvents").append(DEFAULT_SEPARATOR)
+                .append("life_networkRebufferingEvents").append(DEFAULT_SEPARATOR)
+                .append("life_bitrateKbps").append(DEFAULT_SEPARATOR)
+                .append("life_contentWatchedTimeMs").append(DEFAULT_SEPARATOR)
+                .append("life_contentWatchedPct").append(DEFAULT_SEPARATOR)
+                .append("life_averageFrameRate").append(DEFAULT_SEPARATOR)
+                .append("life_renderingQuality").append(DEFAULT_SEPARATOR)
+                .append("life_resourceIds").append(DEFAULT_SEPARATOR)
+                .append("life_cdns").append(DEFAULT_SEPARATOR)
+                .append("life_fatalErrorResourceIds").append(DEFAULT_SEPARATOR)
+                .append("life_fatalErrorCdns").append(DEFAULT_SEPARATOR)
+                .append("life_latestErrorResourceId").append(DEFAULT_SEPARATOR)
+                .append("life_latestErrorCdn").append(DEFAULT_SEPARATOR)
+                .append("life_joinResourceIds").append(DEFAULT_SEPARATOR)
+                .append("life_joinCdns").append(DEFAULT_SEPARATOR)
+                .append("life_lastJoinCdn").append(DEFAULT_SEPARATOR)
+                .append("life_lastCdn").append(DEFAULT_SEPARATOR)
+                .append("life_lastJoinResourceId").append(DEFAULT_SEPARATOR)
+                .append("life_isVideoPlaybackFailure").append(DEFAULT_SEPARATOR)
+                .append("life_isVideoStartFailure").append(DEFAULT_SEPARATOR)
+                .append("life_hasJoined").append(DEFAULT_SEPARATOR)
+                .append("life_isVideoPlaybackFailureBusiness").append(DEFAULT_SEPARATOR)
+                .append("life_isVideoPlaybackFailureTech").append(DEFAULT_SEPARATOR)
+                .append("life_isVideoStartFailureBusiness").append(DEFAULT_SEPARATOR)
+                .append("life_isVideoStartFailureTech").append(DEFAULT_SEPARATOR)
+                .append("life_videoPlaybackFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
+                .append("life_videoPlaybackFailureErrorsTech").append(DEFAULT_SEPARATOR)
+                .append("life_videoStartFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
+                .append("life_videoStartFailureErrorsTech").append(DEFAULT_SEPARATOR)
+                .append("life_exitDuringPreRoll").append(DEFAULT_SEPARATOR)
+                .append("life_waitTimePrerollExitMs").append(DEFAULT_SEPARATOR)
+                .append("life_lastCDNGroupId").append(DEFAULT_SEPARATOR)
+                .append("life_lastCDNEdgeServer").append(DEFAULT_SEPARATOR)
+                .append("interval_startTimeMs").append(DEFAULT_SEPARATOR)
+                .append("switch_resourceId").append(DEFAULT_SEPARATOR)
+                .append("switch_cdn").append(DEFAULT_SEPARATOR)
+                .append("switch_justJoined").append(DEFAULT_SEPARATOR)
+                .append("switch_hasJoined").append(DEFAULT_SEPARATOR)
+                .append("switch_justJoinedAndLifeJoinTimeMsIsAccurate").append(DEFAULT_SEPARATOR)
+                .append("switch_isEndedPlay").append(DEFAULT_SEPARATOR)
+                .append("switch_isEnded").append(DEFAULT_SEPARATOR)
+                .append("switch_isEndedPlayAndLifeAverageBitrateKbpsGT0").append(DEFAULT_SEPARATOR)
+                .append("switch_isVideoStartFailure").append(DEFAULT_SEPARATOR)
+                .append("switch_videoStartFailureErrors").append(DEFAULT_SEPARATOR)
+                .append("switch_isExitBeforeVideoStart").append(DEFAULT_SEPARATOR)
+                .append("switch_isVideoPlaybackFailure").append(DEFAULT_SEPARATOR)
+                .append("switch_isVideoStartSave").append(DEFAULT_SEPARATOR)
+                .append("switch_videoPlaybackFailureErrors").append(DEFAULT_SEPARATOR)
+                .append("switch_isAttempt").append(DEFAULT_SEPARATOR)
+                .append("switch_playingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("switch_rebufferingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("switch_networkRebufferingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("switch_rebufferingDuringAdsMs").append(DEFAULT_SEPARATOR)
+                .append("switch_adRelatedBufferingMs").append(DEFAULT_SEPARATOR)
+                .append("switch_bitrateBytes").append(DEFAULT_SEPARATOR)
+                .append("switch_bitrateTimeMs").append(DEFAULT_SEPARATOR)
+                .append("switch_framesLoaded").append(DEFAULT_SEPARATOR)
+                .append("switch_framesPlayingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("switch_seekJoinTimeMs").append(DEFAULT_SEPARATOR)
+                .append("switch_seekJoinCount").append(DEFAULT_SEPARATOR)
+                .append("switch_pcpBuckets1Min").append(DEFAULT_SEPARATOR)
+                .append("switch_pcpIntervals").append(DEFAULT_SEPARATOR)
+                .append("switch_rebufferingTimeMsRaw").append(DEFAULT_SEPARATOR)
+                .append("switch_networkRebufferingTimeMsRaw").append(DEFAULT_SEPARATOR)
+                .append("switch_isVideoPlaybackFailureBusiness").append(DEFAULT_SEPARATOR)
+                .append("switch_isVideoPlaybackFailureTech").append(DEFAULT_SEPARATOR)
+                .append("switch_isVideoStartFailureBusiness").append(DEFAULT_SEPARATOR)
+                .append("switch_isVideoStartFailureTech").append(DEFAULT_SEPARATOR)
+                .append("switch_videoPlaybackFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
+                .append("switch_videoPlaybackFailureErrorsTech").append(DEFAULT_SEPARATOR)
+                .append("switch_videoStartFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
+                .append("switch_videoStartFailureErrorsTech").append(DEFAULT_SEPARATOR)
+                .append("switch_adRequested").append(DEFAULT_SEPARATOR)
+                .append("bucket_sessionTimeMs").append(DEFAULT_SEPARATOR)
+                .append("bucket_joinTimeMs").append(DEFAULT_SEPARATOR)
+                .append("bucket_playingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("bucket_bufferingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("bucket_networkBufferingTimeMs").append(DEFAULT_SEPARATOR)
+                .append("bucket_rebufferingRatioPct").append(DEFAULT_SEPARATOR)
+                .append("bucket_networkRebufferingRatioPct").append(DEFAULT_SEPARATOR)
+                .append("bucket_averageBitrateKbps").append(DEFAULT_SEPARATOR)
+                .append("bucket_seekJoinTimeMs").append(DEFAULT_SEPARATOR)
+                .append("bucket_averageFrameRate").append(DEFAULT_SEPARATOR)
+                .append("bucket_contentWatchedPct").append(DEFAULT_SEPARATOR)
+                .append("tags")
+                .append(DEFAULT_LINE_END);
+
+        String head = sb.toString();
+
+
+        writer.write(head);
         if (inputPath.isDirectory()) {
             for (File f : inputPath.listFiles()) {
-                parsefile(f,writer);
+                parsefile(f, writer);
             }
-        }
-        else
-        {
-            parsefile(inputPath,writer);
+        } else {
+            parsefile(inputPath, writer);
         }
 
         writer.flush();
@@ -69,137 +189,13 @@ public class ContentSessionToTSVMap {
 
             String lineText = null;
 
-            StringBuilder sb = new StringBuilder();
-            sb.append("version").append(DEFAULT_SEPARATOR)
-                    .append("customerId").append(DEFAULT_SEPARATOR)
-                    .append("clientId").append(DEFAULT_SEPARATOR)
-                    .append("sessionId").append(DEFAULT_SEPARATOR)
-                    .append("segmentId").append(DEFAULT_SEPARATOR)
-                    .append("datasourceId").append(DEFAULT_SEPARATOR)
-                    .append("isAudienceOnly").append(DEFAULT_SEPARATOR)
-                    .append("isAd").append(DEFAULT_SEPARATOR)
-                    .append("assetName").append(DEFAULT_SEPARATOR)
-                    .append("streamUrl").append(DEFAULT_SEPARATOR)
-                    .append("contentLengthMs").append(DEFAULT_SEPARATOR)
-                    .append("ipType").append(DEFAULT_SEPARATOR)
-                    .append("geo_continent").append(DEFAULT_SEPARATOR)
-                    .append("geo_country").append(DEFAULT_SEPARATOR)
-                    .append("geo_state").append(DEFAULT_SEPARATOR)
-                    .append("geo_city").append(DEFAULT_SEPARATOR)
-                    .append("geo_dma").append(DEFAULT_SEPARATOR)
-                    .append("geo_asn").append(DEFAULT_SEPARATOR)
-                    .append("geo_isp").append(DEFAULT_SEPARATOR)
-                    .append("geo_postalCode").append(DEFAULT_SEPARATOR)
-                    .append("life_firstReceivedTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_latestReceivedTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_sessionTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_joinTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_playingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_bufferingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_networkBufferingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_rebufferingRatioPct").append(DEFAULT_SEPARATOR)
-                    .append("life_networkRebufferingRatioPct").append(DEFAULT_SEPARATOR)
-                    .append("life_averageBitrateKbps").append(DEFAULT_SEPARATOR)
-                    .append("life_seekJoinTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_seekJoinCount").append(DEFAULT_SEPARATOR)
-                    .append("life_bufferingEvents").append(DEFAULT_SEPARATOR)
-                    .append("life_networkRebufferingEvents").append(DEFAULT_SEPARATOR)
-                    .append("life_bitrateKbps").append(DEFAULT_SEPARATOR)
-                    .append("life_contentWatchedTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("life_contentWatchedPct").append(DEFAULT_SEPARATOR)
-                    .append("life_averageFrameRate").append(DEFAULT_SEPARATOR)
-                    .append("life_renderingQuality").append(DEFAULT_SEPARATOR)
-                    .append("life_resourceIds").append(DEFAULT_SEPARATOR)
-                    .append("life_cdns").append(DEFAULT_SEPARATOR)
-                    .append("life_fatalErrorResourceIds").append(DEFAULT_SEPARATOR)
-                    .append("life_fatalErrorCdns").append(DEFAULT_SEPARATOR)
-                    .append("life_latestErrorResourceId").append(DEFAULT_SEPARATOR)
-                    .append("life_latestErrorCdn").append(DEFAULT_SEPARATOR)
-                    .append("life_joinResourceIds").append(DEFAULT_SEPARATOR)
-                    .append("life_joinCdns").append(DEFAULT_SEPARATOR)
-                    .append("life_lastJoinCdn").append(DEFAULT_SEPARATOR)
-                    .append("life_lastCdn").append(DEFAULT_SEPARATOR)
-                    .append("life_lastJoinResourceId").append(DEFAULT_SEPARATOR)
-                    .append("life_isVideoPlaybackFailure").append(DEFAULT_SEPARATOR)
-                    .append("life_isVideoStartFailure").append(DEFAULT_SEPARATOR)
-                    .append("life_hasJoined").append(DEFAULT_SEPARATOR)
-                    .append("life_isVideoPlaybackFailureBusiness").append(DEFAULT_SEPARATOR)
-                    .append("life_isVideoPlaybackFailureTech").append(DEFAULT_SEPARATOR)
-                    .append("life_isVideoStartFailureBusiness").append(DEFAULT_SEPARATOR)
-                    .append("life_isVideoStartFailureTech").append(DEFAULT_SEPARATOR)
-                    .append("life_videoPlaybackFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
-                    .append("life_videoPlaybackFailureErrorsTech").append(DEFAULT_SEPARATOR)
-                    .append("life_videoStartFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
-                    .append("life_videoStartFailureErrorsTech").append(DEFAULT_SEPARATOR)
-                    .append("life_exitDuringPreRoll").append(DEFAULT_SEPARATOR)
-                    .append("life_waitTimePrerollExitMs").append(DEFAULT_SEPARATOR)
-                    .append("life_lastCDNGroupId").append(DEFAULT_SEPARATOR)
-                    .append("life_lastCDNEdgeServer").append(DEFAULT_SEPARATOR)
-                    .append("interval_startTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_resourceId").append(DEFAULT_SEPARATOR)
-                    .append("switch_cdn").append(DEFAULT_SEPARATOR)
-                    .append("switch_justJoined").append(DEFAULT_SEPARATOR)
-                    .append("switch_hasJoined").append(DEFAULT_SEPARATOR)
-                    .append("switch_justJoinedAndLifeJoinTimeMsIsAccurate").append(DEFAULT_SEPARATOR)
-                    .append("switch_isEndedPlay").append(DEFAULT_SEPARATOR)
-                    .append("switch_isEnded").append(DEFAULT_SEPARATOR)
-                    .append("switch_isEndedPlayAndLifeAverageBitrateKbpsGT0").append(DEFAULT_SEPARATOR)
-                    .append("switch_isVideoStartFailure").append(DEFAULT_SEPARATOR)
-                    .append("switch_videoStartFailureErrors").append(DEFAULT_SEPARATOR)
-                    .append("switch_isExitBeforeVideoStart").append(DEFAULT_SEPARATOR)
-                    .append("switch_isVideoPlaybackFailure").append(DEFAULT_SEPARATOR)
-                    .append("switch_isVideoStartSave").append(DEFAULT_SEPARATOR)
-                    .append("switch_videoPlaybackFailureErrors").append(DEFAULT_SEPARATOR)
-                    .append("switch_isAttempt").append(DEFAULT_SEPARATOR)
-                    .append("switch_playingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_rebufferingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_networkRebufferingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_rebufferingDuringAdsMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_adRelatedBufferingMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_bitrateBytes").append(DEFAULT_SEPARATOR)
-                    .append("switch_bitrateTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_framesLoaded").append(DEFAULT_SEPARATOR)
-                    .append("switch_framesPlayingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_seekJoinTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("switch_seekJoinCount").append(DEFAULT_SEPARATOR)
-                    .append("switch_pcpBuckets1Min").append(DEFAULT_SEPARATOR)
-                    .append("switch_pcpIntervals").append(DEFAULT_SEPARATOR)
-                    .append("switch_rebufferingTimeMsRaw").append(DEFAULT_SEPARATOR)
-                    .append("switch_networkRebufferingTimeMsRaw").append(DEFAULT_SEPARATOR)
-                    .append("switch_isVideoPlaybackFailureBusiness").append(DEFAULT_SEPARATOR)
-                    .append("switch_isVideoPlaybackFailureTech").append(DEFAULT_SEPARATOR)
-                    .append("switch_isVideoStartFailureBusiness").append(DEFAULT_SEPARATOR)
-                    .append("switch_isVideoStartFailureTech").append(DEFAULT_SEPARATOR)
-                    .append("switch_videoPlaybackFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
-                    .append("switch_videoPlaybackFailureErrorsTech").append(DEFAULT_SEPARATOR)
-                    .append("switch_videoStartFailureErrorsBusiness").append(DEFAULT_SEPARATOR)
-                    .append("switch_videoStartFailureErrorsTech").append(DEFAULT_SEPARATOR)
-                    .append("switch_adRequested").append(DEFAULT_SEPARATOR)
-                    .append("bucket_sessionTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("bucket_joinTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("bucket_playingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("bucket_bufferingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("bucket_networkBufferingTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("bucket_rebufferingRatioPct").append(DEFAULT_SEPARATOR)
-                    .append("bucket_networkRebufferingRatioPct").append(DEFAULT_SEPARATOR)
-                    .append("bucket_averageBitrateKbps").append(DEFAULT_SEPARATOR)
-                    .append("bucket_seekJoinTimeMs").append(DEFAULT_SEPARATOR)
-                    .append("bucket_averageFrameRate").append(DEFAULT_SEPARATOR)
-                    .append("bucket_contentWatchedPct").append(DEFAULT_SEPARATOR)
-                    .append("tags")
-                    .append(DEFAULT_LINE_END);
-
-            String head = sb.toString();
-
-
-            writer.write(head);
 
             while ((lineText = lineReader.readLine()) != null) {
 
                 JsonNode jsonTree = new ObjectMapper().readTree(lineText);
                 CsvMapper csvMapper = new CsvMapper();
 
-                ContentSession cs = new ContentSession();
+                ContentSessionHulu cs = new ContentSessionHulu();
 
 
                 Map<String, String> tags = new HashMap<>();
@@ -401,14 +397,6 @@ public class ContentSessionToTSVMap {
                         cs.setLife_videoStartFailureErrorsBusiness(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.videoStartFailureErrorsTech".equals(nodeName)) {
-//                        if("[\"Can't load the video\"]".equals(jn.getValue().toString()))
-//                        {
-//                            String aaa = jn.getValue().toString().replaceAll(quote,"");
-//
-//                            String bbb = aaa.replaceAll("\"","\'");
-//                            String ccc = buildStringArray(jn.getValue().toString());
-//                            String ddd = ccc;
-//                        }
                         cs.setLife_videoStartFailureErrorsTech(buildStringArray(jn.getValue().toString()));
                     } else if
                     ("life.exitDuringPreRoll".equals(nodeName)) {
@@ -592,6 +580,10 @@ public class ContentSessionToTSVMap {
                     } else if
                     ("bucket.contentWatchedPct".equals(nodeName)) {
                         cs.setBucket_contentWatchedPct(Float.parseFloat(valueStr));
+                    } else if ("tags.m3.dv.hwt".equals(nodeName)) {
+                        cs.setM3_dv_hwt(valueStr);
+                    } else if ("tags.m3.dv.mrk".equals(nodeName)) {
+                        cs.setM3_dv_mrk(valueStr);
                     } else if (nodeName.startsWith("tags.")) {
                         String key = quote + nodeName.substring(5) + quote;
                         tags.put(key, (quote + valueStr.replaceAll(quote, "") + quote).replaceAll(DEFAULT_LINE_END, ""));
