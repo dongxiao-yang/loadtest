@@ -144,6 +144,70 @@ public class ContentSessionHulu {
     public String m3_dv_hwt;
     public String m3_dv_mrk;
 
+    public String c3_video_isad;
+    public String c3_ad_id;
+    public String c3_ad_position;
+    public String c3_ad_system;
+    public String c3_ad_technology;
+    public String c3_ad_isslate;
+    public String c3_ad_adstitcher;
+    public String c3_ad_creativeid;
+    public String c3_ad_breakid;
+    public String c3_ad_contentassetname;
+    public String c3_pt_ver;
+    public String c3_device_ua;
+    public String c3_adaptor_type;
+    public String c3_protocol_level;
+    public String c3_protocol_pure;
+    public String c3_pt_os_ver;
+    public String c3_device_manufacturer;
+    public String c3_device_brand;
+    public String c3_device_model;
+    public String c3_device_conn;
+    public String c3_device_ver;
+    public String c3_go_algoid;
+    public String c3_player_name;
+    public String c3_de_rs_raw;
+    public String c3_de_bitr;
+    public String c3_de_rsid;
+    public String c3_de_cdn;
+    public String c3_de_rs;
+    public String c3_device_cver;
+    public String c3_device_cver_bld;
+    public String c3_video_islive;
+    public String c3_viewer_id;
+    public String c3_client_hwtype;
+    public String c3_client_osname;
+    public String c3_client_manufacturer;
+    public String c3_client_brand;
+    public String c3_client_marketingname;
+    public String c3_client_model;
+    public String c3_client_osv;
+    public String c3_client_osf;
+    public String c3_client_br;
+    public String c3_client_brv;
+    public String m3_dv_mnf;
+    public String m3_dv_n;
+    public String m3_dv_os;
+    public String m3_dv_osv;
+    public String m3_dv_osf;
+    public String m3_dv_br;
+    public String m3_dv_brv;
+    public String m3_dv_fw;
+    public String m3_dv_fwv;
+    public String m3_dv_mod;
+    public String m3_dv_vnd;
+    public String m3_net_t;
+    public String c3_protocol_type;
+    public String c3_device_type;
+    public String c3_pt_os;
+    public String c3_ft_os;
+    public String c3_framework;
+    public String c3_framework_ver;
+    public String c3_pt_br;
+    public String c3_pt_br_ver;
+    public String c3_br_v;
+
     public Map<String, String> tags = new HashMap<>();
 
     public ContentSessionHulu(){}
@@ -621,6 +685,258 @@ public class ContentSessionHulu {
         this.m3_dv_mrk = m3_dv_mrk;
     }
 
+    public void setC3_video_isad(String c3_video_isad) {
+        this.c3_video_isad = c3_video_isad;
+    }
+
+    public void setC3_ad_id(String c3_ad_id) {
+        this.c3_ad_id = c3_ad_id;
+    }
+
+    public void setC3_ad_position(String c3_ad_position) {
+        this.c3_ad_position = c3_ad_position;
+    }
+
+    public void setC3_ad_system(String c3_ad_system) {
+        this.c3_ad_system = c3_ad_system;
+    }
+
+    public void setC3_ad_technology(String c3_ad_technology) {
+        this.c3_ad_technology = c3_ad_technology;
+    }
+
+    public void setC3_ad_isslate(String c3_ad_isslate) {
+        this.c3_ad_isslate = c3_ad_isslate;
+    }
+
+    public void setC3_ad_adstitcher(String c3_ad_adstitcher) {
+        this.c3_ad_adstitcher = c3_ad_adstitcher;
+    }
+
+    public void setC3_ad_creativeid(String c3_ad_creativeid) {
+        this.c3_ad_creativeid = c3_ad_creativeid;
+    }
+
+    public void setC3_ad_breakid(String c3_ad_breakid) {
+        this.c3_ad_breakid = c3_ad_breakid;
+    }
+
+    public void setC3_ad_contentassetname(String c3_ad_contentassetname) {
+        this.c3_ad_contentassetname = c3_ad_contentassetname;
+    }
+
+    public void setC3_pt_ver(String c3_pt_ver) {
+        this.c3_pt_ver = c3_pt_ver;
+    }
+
+    public void setC3_device_ua(String c3_device_ua) {
+        this.c3_device_ua = c3_device_ua;
+    }
+
+    public void setC3_adaptor_type(String c3_adaptor_type) {
+        this.c3_adaptor_type = c3_adaptor_type;
+    }
+
+    public void setC3_protocol_level(String c3_protocol_level) {
+        this.c3_protocol_level = c3_protocol_level;
+    }
+
+    public void setC3_protocol_pure(String c3_protocol_pure) {
+        this.c3_protocol_pure = c3_protocol_pure;
+    }
+
+    public void setC3_pt_os_ver(String c3_pt_os_ver) {
+        this.c3_pt_os_ver = c3_pt_os_ver;
+    }
+
+    public void setC3_device_manufacturer(String c3_device_manufacturer) {
+        this.c3_device_manufacturer = c3_device_manufacturer;
+    }
+
+    public void setC3_device_brand(String c3_device_brand) {
+        this.c3_device_brand = c3_device_brand;
+    }
+
+    public void setC3_device_model(String c3_device_model) {
+        this.c3_device_model = c3_device_model;
+    }
+
+    public void setC3_device_conn(String c3_device_conn) {
+        this.c3_device_conn = c3_device_conn;
+    }
+
+    public void setC3_device_ver(String c3_device_ver) {
+        this.c3_device_ver = c3_device_ver;
+    }
+
+    public void setC3_go_algoid(String c3_go_algoid) {
+        this.c3_go_algoid = c3_go_algoid;
+    }
+
+    public void setC3_player_name(String c3_player_name) {
+        this.c3_player_name = c3_player_name;
+    }
+
+    public void setC3_de_rs_raw(String c3_de_rs_raw) {
+        this.c3_de_rs_raw = c3_de_rs_raw;
+    }
+
+    public void setC3_de_bitr(String c3_de_bitr) {
+        this.c3_de_bitr = c3_de_bitr;
+    }
+
+    public void setC3_de_rsid(String c3_de_rsid) {
+        this.c3_de_rsid = c3_de_rsid;
+    }
+
+    public void setC3_de_cdn(String c3_de_cdn) {
+        this.c3_de_cdn = c3_de_cdn;
+    }
+
+    public void setC3_de_rs(String c3_de_rs) {
+        this.c3_de_rs = c3_de_rs;
+    }
+
+    public void setC3_device_cver(String c3_device_cver) {
+        this.c3_device_cver = c3_device_cver;
+    }
+
+    public void setC3_device_cver_bld(String c3_device_cver_bld) {
+        this.c3_device_cver_bld = c3_device_cver_bld;
+    }
+
+    public void setC3_video_islive(String c3_video_islive) {
+        this.c3_video_islive = c3_video_islive;
+    }
+
+    public void setC3_viewer_id(String c3_viewer_id) {
+        this.c3_viewer_id = c3_viewer_id;
+    }
+
+    public void setC3_client_hwtype(String c3_client_hwtype) {
+        this.c3_client_hwtype = c3_client_hwtype;
+    }
+
+    public void setC3_client_osname(String c3_client_osname) {
+        this.c3_client_osname = c3_client_osname;
+    }
+
+    public void setC3_client_manufacturer(String c3_client_manufacturer) {
+        this.c3_client_manufacturer = c3_client_manufacturer;
+    }
+
+    public void setC3_client_brand(String c3_client_brand) {
+        this.c3_client_brand = c3_client_brand;
+    }
+
+    public void setC3_client_marketingname(String c3_client_marketingname) {
+        this.c3_client_marketingname = c3_client_marketingname;
+    }
+
+    public void setC3_client_model(String c3_client_model) {
+        this.c3_client_model = c3_client_model;
+    }
+
+    public void setC3_client_osv(String c3_client_osv) {
+        this.c3_client_osv = c3_client_osv;
+    }
+
+    public void setC3_client_osf(String c3_client_osf) {
+        this.c3_client_osf = c3_client_osf;
+    }
+
+    public void setC3_client_br(String c3_client_br) {
+        this.c3_client_br = c3_client_br;
+    }
+
+    public void setC3_client_brv(String c3_client_brv) {
+        this.c3_client_brv = c3_client_brv;
+    }
+
+    public void setM3_dv_mnf(String m3_dv_mnf) {
+        this.m3_dv_mnf = m3_dv_mnf;
+    }
+
+    public void setM3_dv_n(String m3_dv_n) {
+        this.m3_dv_n = m3_dv_n;
+    }
+
+    public void setM3_dv_os(String m3_dv_os) {
+        this.m3_dv_os = m3_dv_os;
+    }
+
+    public void setM3_dv_osv(String m3_dv_osv) {
+        this.m3_dv_osv = m3_dv_osv;
+    }
+
+    public void setM3_dv_osf(String m3_dv_osf) {
+        this.m3_dv_osf = m3_dv_osf;
+    }
+
+    public void setM3_dv_br(String m3_dv_br) {
+        this.m3_dv_br = m3_dv_br;
+    }
+
+    public void setM3_dv_brv(String m3_dv_brv) {
+        this.m3_dv_brv = m3_dv_brv;
+    }
+
+    public void setM3_dv_fw(String m3_dv_fw) {
+        this.m3_dv_fw = m3_dv_fw;
+    }
+
+    public void setM3_dv_fwv(String m3_dv_fwv) {
+        this.m3_dv_fwv = m3_dv_fwv;
+    }
+
+    public void setM3_dv_mod(String m3_dv_mod) {
+        this.m3_dv_mod = m3_dv_mod;
+    }
+
+    public void setM3_dv_vnd(String m3_dv_vnd) {
+        this.m3_dv_vnd = m3_dv_vnd;
+    }
+
+    public void setM3_net_t(String m3_net_t) {
+        this.m3_net_t = m3_net_t;
+    }
+
+    public void setC3_protocol_type(String c3_protocol_type) {
+        this.c3_protocol_type = c3_protocol_type;
+    }
+
+    public void setC3_device_type(String c3_device_type) {
+        this.c3_device_type = c3_device_type;
+    }
+
+    public void setC3_pt_os(String c3_pt_os) {
+        this.c3_pt_os = c3_pt_os;
+    }
+
+    public void setC3_ft_os(String c3_ft_os) {
+        this.c3_ft_os = c3_ft_os;
+    }
+
+    public void setC3_framework(String c3_framework) {
+        this.c3_framework = c3_framework;
+    }
+
+    public void setC3_framework_ver(String c3_framework_ver) {
+        this.c3_framework_ver = c3_framework_ver;
+    }
+
+    public void setC3_pt_br(String c3_pt_br) {
+        this.c3_pt_br = c3_pt_br;
+    }
+
+    public void setC3_pt_br_ver(String c3_pt_br_ver) {
+        this.c3_pt_br_ver = c3_pt_br_ver;
+    }
+
+    public void setC3_br_v(String c3_br_v) {
+        this.c3_br_v = c3_br_v;
+    }
+
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
@@ -751,4 +1067,191 @@ public class ContentSessionHulu {
         return sb.toString();
     }
 
+    public String toSparkTSV() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(version).append(DEFAULT_SEPARATOR)
+                .append(customerId).append(DEFAULT_SEPARATOR)
+                .append(clientId).append(DEFAULT_SEPARATOR)
+                .append(sessionId).append(DEFAULT_SEPARATOR)
+                .append(segmentId).append(DEFAULT_SEPARATOR)
+                .append(datasourceId).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_hwt).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_mrk).append(DEFAULT_SEPARATOR)
+                .append(isAudienceOnly).append(DEFAULT_SEPARATOR)
+                .append(isAd).append(DEFAULT_SEPARATOR)
+                .append(assetName).append(DEFAULT_SEPARATOR)
+                .append(streamUrl).append(DEFAULT_SEPARATOR)
+                .append(contentLengthMs).append(DEFAULT_SEPARATOR)
+                .append(ipType).append(DEFAULT_SEPARATOR)
+                .append(geo_continent).append(DEFAULT_SEPARATOR)
+                .append(geo_country).append(DEFAULT_SEPARATOR)
+                .append(geo_state).append(DEFAULT_SEPARATOR)
+                .append(geo_city).append(DEFAULT_SEPARATOR)
+                .append(geo_dma).append(DEFAULT_SEPARATOR)
+                .append(geo_asn).append(DEFAULT_SEPARATOR)
+                .append(geo_isp).append(DEFAULT_SEPARATOR)
+                .append(geo_postalCode).append(DEFAULT_SEPARATOR)
+                .append(life_firstReceivedTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_latestReceivedTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_sessionTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_joinTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_playingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_bufferingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_networkBufferingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_rebufferingRatioPct).append(DEFAULT_SEPARATOR)
+                .append(life_networkRebufferingRatioPct).append(DEFAULT_SEPARATOR)
+                .append(life_averageBitrateKbps).append(DEFAULT_SEPARATOR)
+                .append(life_seekJoinTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_seekJoinCount).append(DEFAULT_SEPARATOR)
+                .append(life_bufferingEvents).append(DEFAULT_SEPARATOR)
+                .append(life_networkRebufferingEvents).append(DEFAULT_SEPARATOR)
+                .append(life_bitrateKbps).append(DEFAULT_SEPARATOR)
+                .append(life_contentWatchedTimeMs).append(DEFAULT_SEPARATOR)
+                .append(life_contentWatchedPct).append(DEFAULT_SEPARATOR)
+                .append(life_averageFrameRate).append(DEFAULT_SEPARATOR)
+                .append(life_renderingQuality).append(DEFAULT_SEPARATOR)
+                .append(life_resourceIds).append(DEFAULT_SEPARATOR)
+                .append(life_cdns).append(DEFAULT_SEPARATOR)
+                .append(life_fatalErrorResourceIds).append(DEFAULT_SEPARATOR)
+                .append(life_fatalErrorCdns).append(DEFAULT_SEPARATOR)
+                .append(life_latestErrorResourceId).append(DEFAULT_SEPARATOR)
+                .append(life_latestErrorCdn).append(DEFAULT_SEPARATOR)
+                .append(life_joinResourceIds).append(DEFAULT_SEPARATOR)
+                .append(life_joinCdns).append(DEFAULT_SEPARATOR)
+                .append(life_lastJoinCdn).append(DEFAULT_SEPARATOR)
+                .append(life_lastCdn).append(DEFAULT_SEPARATOR)
+                .append(life_lastJoinResourceId).append(DEFAULT_SEPARATOR)
+                .append(life_isVideoPlaybackFailure).append(DEFAULT_SEPARATOR)
+                .append(life_isVideoStartFailure).append(DEFAULT_SEPARATOR)
+                .append(life_hasJoined).append(DEFAULT_SEPARATOR)
+                .append(life_isVideoPlaybackFailureBusiness).append(DEFAULT_SEPARATOR)
+                .append(life_isVideoPlaybackFailureTech).append(DEFAULT_SEPARATOR)
+                .append(life_isVideoStartFailureBusiness).append(DEFAULT_SEPARATOR)
+                .append(life_isVideoStartFailureTech).append(DEFAULT_SEPARATOR)
+                .append(life_videoPlaybackFailureErrorsBusiness).append(DEFAULT_SEPARATOR)
+                .append(life_videoPlaybackFailureErrorsTech).append(DEFAULT_SEPARATOR)
+                .append(life_videoStartFailureErrorsBusiness).append(DEFAULT_SEPARATOR)
+                .append(life_videoStartFailureErrorsTech).append(DEFAULT_SEPARATOR)
+                .append(life_exitDuringPreRoll).append(DEFAULT_SEPARATOR)
+                .append(life_waitTimePrerollExitMs).append(DEFAULT_SEPARATOR)
+                .append(life_lastCDNGroupId).append(DEFAULT_SEPARATOR)
+                .append(life_lastCDNEdgeServer).append(DEFAULT_SEPARATOR)
+                .append(interval_startTimeMs).append(DEFAULT_SEPARATOR)
+                .append(switch_resourceId).append(DEFAULT_SEPARATOR)
+                .append(switch_cdn).append(DEFAULT_SEPARATOR)
+                .append(switch_justJoined).append(DEFAULT_SEPARATOR)
+                .append(switch_hasJoined).append(DEFAULT_SEPARATOR)
+                .append(switch_justJoinedAndLifeJoinTimeMsIsAccurate).append(DEFAULT_SEPARATOR)
+                .append(switch_isEndedPlay).append(DEFAULT_SEPARATOR)
+                .append(switch_isEnded).append(DEFAULT_SEPARATOR)
+                .append(switch_isEndedPlayAndLifeAverageBitrateKbpsGT0).append(DEFAULT_SEPARATOR)
+                .append(switch_isVideoStartFailure).append(DEFAULT_SEPARATOR)
+                .append(switch_videoStartFailureErrors).append(DEFAULT_SEPARATOR)
+                .append(switch_isExitBeforeVideoStart).append(DEFAULT_SEPARATOR)
+                .append(switch_isVideoPlaybackFailure).append(DEFAULT_SEPARATOR)
+                .append(switch_isVideoStartSave).append(DEFAULT_SEPARATOR)
+                .append(switch_videoPlaybackFailureErrors).append(DEFAULT_SEPARATOR)
+                .append(switch_isAttempt).append(DEFAULT_SEPARATOR)
+                .append(switch_playingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(switch_rebufferingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(switch_networkRebufferingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(switch_rebufferingDuringAdsMs).append(DEFAULT_SEPARATOR)
+                .append(switch_adRelatedBufferingMs).append(DEFAULT_SEPARATOR)
+                .append(switch_bitrateBytes).append(DEFAULT_SEPARATOR)
+                .append(switch_bitrateTimeMs).append(DEFAULT_SEPARATOR)
+                .append(switch_framesLoaded).append(DEFAULT_SEPARATOR)
+                .append(switch_framesPlayingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(switch_seekJoinTimeMs).append(DEFAULT_SEPARATOR)
+                .append(switch_seekJoinCount).append(DEFAULT_SEPARATOR)
+                .append(switch_pcpBuckets1Min).append(DEFAULT_SEPARATOR)
+                .append(switch_pcpIntervals).append(DEFAULT_SEPARATOR)
+                .append(switch_rebufferingTimeMsRaw).append(DEFAULT_SEPARATOR)
+                .append(switch_networkRebufferingTimeMsRaw).append(DEFAULT_SEPARATOR)
+                .append(switch_isVideoPlaybackFailureBusiness).append(DEFAULT_SEPARATOR)
+                .append(switch_isVideoPlaybackFailureTech).append(DEFAULT_SEPARATOR)
+                .append(switch_isVideoStartFailureBusiness).append(DEFAULT_SEPARATOR)
+                .append(switch_isVideoStartFailureTech).append(DEFAULT_SEPARATOR)
+                .append(switch_videoPlaybackFailureErrorsBusiness).append(DEFAULT_SEPARATOR)
+                .append(switch_videoPlaybackFailureErrorsTech).append(DEFAULT_SEPARATOR)
+                .append(switch_videoStartFailureErrorsBusiness).append(DEFAULT_SEPARATOR)
+                .append(switch_videoStartFailureErrorsTech).append(DEFAULT_SEPARATOR)
+                .append(switch_adRequested).append(DEFAULT_SEPARATOR)
+                .append(bucket_sessionTimeMs).append(DEFAULT_SEPARATOR)
+                .append(bucket_joinTimeMs).append(DEFAULT_SEPARATOR)
+                .append(bucket_playingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(bucket_bufferingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(bucket_networkBufferingTimeMs).append(DEFAULT_SEPARATOR)
+                .append(bucket_rebufferingRatioPct).append(DEFAULT_SEPARATOR)
+                .append(bucket_networkRebufferingRatioPct).append(DEFAULT_SEPARATOR)
+                .append(bucket_averageBitrateKbps).append(DEFAULT_SEPARATOR)
+                .append(bucket_seekJoinTimeMs).append(DEFAULT_SEPARATOR)
+                .append(bucket_averageFrameRate).append(DEFAULT_SEPARATOR)
+                .append(bucket_contentWatchedPct).append(DEFAULT_SEPARATOR)
+                .append(c3_video_isad).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_id).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_position).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_system).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_technology).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_isslate).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_adstitcher).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_creativeid).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_breakid).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_contentassetname).append(DEFAULT_SEPARATOR)
+                .append(c3_pt_ver).append(DEFAULT_SEPARATOR)
+                .append(c3_device_ua).append(DEFAULT_SEPARATOR)
+                .append(c3_adaptor_type).append(DEFAULT_SEPARATOR)
+                .append(c3_protocol_level).append(DEFAULT_SEPARATOR)
+                .append(c3_protocol_pure).append(DEFAULT_SEPARATOR)
+                .append(c3_pt_os_ver).append(DEFAULT_SEPARATOR)
+                .append(c3_device_manufacturer).append(DEFAULT_SEPARATOR)
+                .append(c3_device_brand).append(DEFAULT_SEPARATOR)
+                .append(c3_device_model).append(DEFAULT_SEPARATOR)
+                .append(c3_device_conn).append(DEFAULT_SEPARATOR)
+                .append(c3_device_ver).append(DEFAULT_SEPARATOR)
+                .append(c3_go_algoid).append(DEFAULT_SEPARATOR)
+                .append(c3_player_name).append(DEFAULT_SEPARATOR)
+                .append(c3_de_rs_raw).append(DEFAULT_SEPARATOR)
+                .append(c3_de_bitr).append(DEFAULT_SEPARATOR)
+                .append(c3_de_rsid).append(DEFAULT_SEPARATOR)
+                .append(c3_de_cdn).append(DEFAULT_SEPARATOR)
+                .append(c3_de_rs).append(DEFAULT_SEPARATOR)
+                .append(c3_device_cver).append(DEFAULT_SEPARATOR)
+                .append(c3_device_cver_bld).append(DEFAULT_SEPARATOR)
+                .append(c3_video_islive).append(DEFAULT_SEPARATOR)
+                .append(c3_viewer_id).append(DEFAULT_SEPARATOR)
+                .append(c3_client_hwtype).append(DEFAULT_SEPARATOR)
+                .append(c3_client_osname).append(DEFAULT_SEPARATOR)
+                .append(c3_client_manufacturer).append(DEFAULT_SEPARATOR)
+                .append(c3_client_brand).append(DEFAULT_SEPARATOR)
+                .append(c3_client_marketingname).append(DEFAULT_SEPARATOR)
+                .append(c3_client_model).append(DEFAULT_SEPARATOR)
+                .append(c3_client_osv).append(DEFAULT_SEPARATOR)
+                .append(c3_client_osf).append(DEFAULT_SEPARATOR)
+                .append(c3_client_br).append(DEFAULT_SEPARATOR)
+                .append(c3_client_brv).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_mnf).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_n).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_os).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_osv).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_osf).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_br).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_brv).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_fw).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_fwv).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_mod).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_vnd).append(DEFAULT_SEPARATOR)
+                .append(m3_net_t).append(DEFAULT_SEPARATOR)
+                .append(c3_protocol_type).append(DEFAULT_SEPARATOR)
+                .append(c3_device_type).append(DEFAULT_SEPARATOR)
+                .append(c3_pt_os).append(DEFAULT_SEPARATOR)
+                .append(c3_ft_os).append(DEFAULT_SEPARATOR)
+                .append(c3_framework).append(DEFAULT_SEPARATOR)
+                .append(c3_framework_ver).append(DEFAULT_SEPARATOR)
+                .append(c3_pt_br).append(DEFAULT_SEPARATOR)
+                .append(c3_pt_br_ver).append(DEFAULT_SEPARATOR)
+                .append(c3_br_v).append(DEFAULT_SEPARATOR)
+                .append(tags.toString().replaceAll("=", ":"));
+
+        return sb.toString();
+    }
 }
