@@ -144,16 +144,16 @@ public class ContentSessionHulu {
     public String m3_dv_hwt;
     public String m3_dv_mrk;
 
-    public String c3_video_isad;
+    public String c3_video_isAd;
     public String c3_ad_id;
     public String c3_ad_position;
     public String c3_ad_system;
     public String c3_ad_technology;
-    public String c3_ad_isslate;
-    public String c3_ad_adstitcher;
-    public String c3_ad_creativeid;
-    public String c3_ad_breakid;
-    public String c3_ad_contentassetname;
+    public String c3_ad_isSlate;
+    public String c3_ad_adStitcher;
+    public String c3_ad_creativeId;
+    public String c3_ad_breakId;
+    public String c3_ad_contentAssetName;
     public String c3_pt_ver;
     public String c3_device_ua;
     public String c3_adaptor_type;
@@ -174,13 +174,13 @@ public class ContentSessionHulu {
     public String c3_de_rs;
     public String c3_device_cver;
     public String c3_device_cver_bld;
-    public String c3_video_islive;
+    public String c3_video_isLive;
     public String c3_viewer_id;
-    public String c3_client_hwtype;
+    public String c3_client_hwType;
     public String c3_client_osname;
     public String c3_client_manufacturer;
     public String c3_client_brand;
-    public String c3_client_marketingname;
+    public String c3_client_marketingName;
     public String c3_client_model;
     public String c3_client_osv;
     public String c3_client_osf;
@@ -211,6 +211,9 @@ public class ContentSessionHulu {
     public String network;
     public String stormflowId;
     public String contentType;
+    public String m3_dv_cat;
+    public String c3_cp_an;
+
     public String huluPlayerFrameworkName;
     public String liveSignalProvider;
     public String clientFeatureTags;
@@ -699,8 +702,8 @@ public class ContentSessionHulu {
         this.m3_dv_mrk = m3_dv_mrk;
     }
 
-    public void setC3_video_isad(String c3_video_isad) {
-        this.c3_video_isad = c3_video_isad;
+    public void setC3_video_isAd(String c3_video_isAd) {
+        this.c3_video_isAd = c3_video_isAd;
     }
 
     public void setC3_ad_id(String c3_ad_id) {
@@ -719,24 +722,24 @@ public class ContentSessionHulu {
         this.c3_ad_technology = c3_ad_technology;
     }
 
-    public void setC3_ad_isslate(String c3_ad_isslate) {
-        this.c3_ad_isslate = c3_ad_isslate;
+    public void setC3_ad_isSlate(String c3_ad_isSlate) {
+        this.c3_ad_isSlate = c3_ad_isSlate;
     }
 
-    public void setC3_ad_adstitcher(String c3_ad_adstitcher) {
-        this.c3_ad_adstitcher = c3_ad_adstitcher;
+    public void setC3_ad_adStitcher(String c3_ad_adStitcher) {
+        this.c3_ad_adStitcher = c3_ad_adStitcher;
     }
 
-    public void setC3_ad_creativeid(String c3_ad_creativeid) {
-        this.c3_ad_creativeid = c3_ad_creativeid;
+    public void setC3_ad_creativeId(String c3_ad_creativeId) {
+        this.c3_ad_creativeId = c3_ad_creativeId;
     }
 
-    public void setC3_ad_breakid(String c3_ad_breakid) {
-        this.c3_ad_breakid = c3_ad_breakid;
+    public void setC3_ad_breakId(String c3_ad_breakId) {
+        this.c3_ad_breakId = c3_ad_breakId;
     }
 
-    public void setC3_ad_contentassetname(String c3_ad_contentassetname) {
-        this.c3_ad_contentassetname = c3_ad_contentassetname;
+    public void setC3_ad_contentAssetName(String c3_ad_contentAssetName) {
+        this.c3_ad_contentAssetName = c3_ad_contentAssetName;
     }
 
     public void setC3_pt_ver(String c3_pt_ver) {
@@ -819,16 +822,16 @@ public class ContentSessionHulu {
         this.c3_device_cver_bld = c3_device_cver_bld;
     }
 
-    public void setC3_video_islive(String c3_video_islive) {
-        this.c3_video_islive = c3_video_islive;
+    public void setC3_video_isLive(String c3_video_isLive) {
+        this.c3_video_isLive = c3_video_isLive;
     }
 
     public void setC3_viewer_id(String c3_viewer_id) {
         this.c3_viewer_id = c3_viewer_id;
     }
 
-    public void setC3_client_hwtype(String c3_client_hwtype) {
-        this.c3_client_hwtype = c3_client_hwtype;
+    public void setC3_client_hwType(String c3_client_hwType) {
+        this.c3_client_hwType = c3_client_hwType;
     }
 
     public void setC3_client_osname(String c3_client_osname) {
@@ -843,8 +846,8 @@ public class ContentSessionHulu {
         this.c3_client_brand = c3_client_brand;
     }
 
-    public void setC3_client_marketingname(String c3_client_marketingname) {
-        this.c3_client_marketingname = c3_client_marketingname;
+    public void setC3_client_marketingName(String c3_client_marketingName) {
+        this.c3_client_marketingName = c3_client_marketingName;
     }
 
     public void setC3_client_model(String c3_client_model) {
@@ -965,6 +968,14 @@ public class ContentSessionHulu {
 
     public void setContentType(String contentType) {
         this.contentType = contentType;
+    }
+
+    public void setM3_dv_cat(String m3_dv_cat) {
+        this.m3_dv_cat = m3_dv_cat;
+    }
+
+    public void setC3_cp_an(String c3_cp_an) {
+        this.c3_cp_an = c3_cp_an;
     }
 
     public void setHuluPlayerFrameworkName(String huluPlayerFrameworkName) {
@@ -1257,16 +1268,16 @@ public class ContentSessionHulu {
                 .append(bucket_seekJoinTimeMs).append(DEFAULT_SEPARATOR)
                 .append(bucket_averageFrameRate).append(DEFAULT_SEPARATOR)
                 .append(bucket_contentWatchedPct).append(DEFAULT_SEPARATOR)
-                .append(c3_video_isad).append(DEFAULT_SEPARATOR)
+                .append(c3_video_isAd).append(DEFAULT_SEPARATOR)
                 .append(c3_ad_id).append(DEFAULT_SEPARATOR)
                 .append(c3_ad_position).append(DEFAULT_SEPARATOR)
                 .append(c3_ad_system).append(DEFAULT_SEPARATOR)
                 .append(c3_ad_technology).append(DEFAULT_SEPARATOR)
-                .append(c3_ad_isslate).append(DEFAULT_SEPARATOR)
-                .append(c3_ad_adstitcher).append(DEFAULT_SEPARATOR)
-                .append(c3_ad_creativeid).append(DEFAULT_SEPARATOR)
-                .append(c3_ad_breakid).append(DEFAULT_SEPARATOR)
-                .append(c3_ad_contentassetname).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_isSlate).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_adStitcher).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_creativeId).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_breakId).append(DEFAULT_SEPARATOR)
+                .append(c3_ad_contentAssetName).append(DEFAULT_SEPARATOR)
                 .append(c3_pt_ver).append(DEFAULT_SEPARATOR)
                 .append(c3_device_ua).append(DEFAULT_SEPARATOR)
                 .append(c3_adaptor_type).append(DEFAULT_SEPARATOR)
@@ -1287,13 +1298,13 @@ public class ContentSessionHulu {
                 .append(c3_de_rs).append(DEFAULT_SEPARATOR)
                 .append(c3_device_cver).append(DEFAULT_SEPARATOR)
                 .append(c3_device_cver_bld).append(DEFAULT_SEPARATOR)
-                .append(c3_video_islive).append(DEFAULT_SEPARATOR)
+                .append(c3_video_isLive).append(DEFAULT_SEPARATOR)
                 .append(c3_viewer_id).append(DEFAULT_SEPARATOR)
-                .append(c3_client_hwtype).append(DEFAULT_SEPARATOR)
+                .append(c3_client_hwType).append(DEFAULT_SEPARATOR)
                 .append(c3_client_osname).append(DEFAULT_SEPARATOR)
                 .append(c3_client_manufacturer).append(DEFAULT_SEPARATOR)
                 .append(c3_client_brand).append(DEFAULT_SEPARATOR)
-                .append(c3_client_marketingname).append(DEFAULT_SEPARATOR)
+                .append(c3_client_marketingName).append(DEFAULT_SEPARATOR)
                 .append(c3_client_model).append(DEFAULT_SEPARATOR)
                 .append(c3_client_osv).append(DEFAULT_SEPARATOR)
                 .append(c3_client_osf).append(DEFAULT_SEPARATOR)
@@ -1324,6 +1335,8 @@ public class ContentSessionHulu {
                 .append(network).append(DEFAULT_SEPARATOR)
                 .append(stormflowId).append(DEFAULT_SEPARATOR)
                 .append(contentType).append(DEFAULT_SEPARATOR)
+                .append(m3_dv_cat).append(DEFAULT_SEPARATOR)
+                .append(c3_cp_an).append(DEFAULT_SEPARATOR)
                 .append(huluPlayerFrameworkName).append(DEFAULT_SEPARATOR)
                 .append(liveSignalProvider).append(DEFAULT_SEPARATOR)
                 .append(clientFeatureTags).append(DEFAULT_SEPARATOR)
