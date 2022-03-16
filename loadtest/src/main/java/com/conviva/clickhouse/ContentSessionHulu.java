@@ -207,6 +207,20 @@ public class ContentSessionHulu {
     public String c3_pt_br;
     public String c3_pt_br_ver;
     public String c3_br_v;
+    public String appVersion;
+    public String network;
+    public String stormflowId;
+    public String contentType;
+    public String huluPlayerFrameworkName;
+    public String liveSignalProvider;
+    public String clientFeatureTags;
+    public String channel;
+    public String huluPlayerFrameworkVersion;
+    public String startType;
+    public String plt;
+    public String DevOps;
+    public String conid;
+    public String stormflow;
 
     public Map<String, String> tags = new HashMap<>();
 
@@ -937,6 +951,62 @@ public class ContentSessionHulu {
         this.c3_br_v = c3_br_v;
     }
 
+    public void setAppVersion(String appVersion) {
+        this.appVersion = appVersion;
+    }
+
+    public void setNetwork(String network) {
+        this.network = network;
+    }
+
+    public void setStormflowId(String stormflowId) {
+        this.stormflowId = stormflowId;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    public void setHuluPlayerFrameworkName(String huluPlayerFrameworkName) {
+        this.huluPlayerFrameworkName = huluPlayerFrameworkName;
+    }
+
+    public void setLiveSignalProvider(String liveSignalProvider) {
+        this.liveSignalProvider = liveSignalProvider;
+    }
+
+    public void setClientFeatureTags(String clientFeatureTags) {
+        this.clientFeatureTags = clientFeatureTags;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setHuluPlayerFrameworkVersion(String huluPlayerFrameworkVersion) {
+        this.huluPlayerFrameworkVersion = huluPlayerFrameworkVersion;
+    }
+
+    public void setStartType(String startType) {
+        this.startType = startType;
+    }
+
+    public void setPlt(String plt) {
+        this.plt = plt;
+    }
+
+    public void setDevOps(String devOps) {
+        DevOps = devOps;
+    }
+
+    public void setConid(String conid) {
+        this.conid = conid;
+    }
+
+    public void setStormflow(String stormflow) {
+        this.stormflow = stormflow;
+    }
+
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
@@ -1250,6 +1320,20 @@ public class ContentSessionHulu {
                 .append(c3_pt_br).append(DEFAULT_SEPARATOR)
                 .append(c3_pt_br_ver).append(DEFAULT_SEPARATOR)
                 .append(c3_br_v).append(DEFAULT_SEPARATOR)
+                .append(appVersion).append(DEFAULT_SEPARATOR)
+                .append(network).append(DEFAULT_SEPARATOR)
+                .append(stormflowId).append(DEFAULT_SEPARATOR)
+                .append(contentType).append(DEFAULT_SEPARATOR)
+                .append(huluPlayerFrameworkName).append(DEFAULT_SEPARATOR)
+                .append(liveSignalProvider).append(DEFAULT_SEPARATOR)
+                .append(clientFeatureTags).append(DEFAULT_SEPARATOR)
+                .append(channel).append(DEFAULT_SEPARATOR)
+                .append(huluPlayerFrameworkVersion).append(DEFAULT_SEPARATOR)
+                .append(startType).append(DEFAULT_SEPARATOR)
+                .append(plt).append(DEFAULT_SEPARATOR)
+                .append(DevOps).append(DEFAULT_SEPARATOR)
+                .append(conid).append(DEFAULT_SEPARATOR)
+                .append(stormflow).append(DEFAULT_SEPARATOR)
                 .append(tags.toString().replaceAll("=", ":"));
 
         return sb.toString();

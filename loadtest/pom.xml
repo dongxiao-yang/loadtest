@@ -70,17 +70,17 @@
             <version>0.13.0</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.conviva.ondemand.experience-insights</groupId>-->
-<!--            <artifactId>session-summary-converter</artifactId>-->
-<!--            <version>1.6.13</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.conviva.ondemand.experience-insights</groupId>-->
+        <!--            <artifactId>session-summary-converter</artifactId>-->
+        <!--            <version>1.6.13</version>-->
+        <!--        </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>org.apache.hadoop</groupId>-->
-<!--            <artifactId>hadoop-common</artifactId>-->
-<!--            <version>2.6.0-cdh5.13.3</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.hadoop</groupId>-->
+        <!--            <artifactId>hadoop-common</artifactId>-->
+        <!--            <version>2.6.0-cdh5.13.3</version>-->
+        <!--        </dependency>-->
 
         <!--        <dependency>-->
         <!--            <groupId>org.slf4j</groupId>-->
@@ -215,6 +215,18 @@
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
