@@ -144,7 +144,7 @@ public class ContentSessionHulu {
     public String m3_dv_hwt;
     public String m3_dv_mrk;
 
-    public String c3_video_isAd;
+    public int c3_video_isAd;
     public String c3_ad_id;
     public String c3_ad_position;
     public String c3_ad_system;
@@ -174,7 +174,7 @@ public class ContentSessionHulu {
     public String c3_de_rs;
     public String c3_device_cver;
     public String c3_device_cver_bld;
-    public String c3_video_isLive;
+    public int c3_video_isLive;
     public String c3_viewer_id;
     public String c3_client_hwType;
     public String c3_client_osname;
@@ -702,7 +702,7 @@ public class ContentSessionHulu {
         this.m3_dv_mrk = m3_dv_mrk;
     }
 
-    public void setC3_video_isAd(String c3_video_isAd) {
+    public void setC3_video_isAd(int c3_video_isAd) {
         this.c3_video_isAd = c3_video_isAd;
     }
 
@@ -822,7 +822,7 @@ public class ContentSessionHulu {
         this.c3_device_cver_bld = c3_device_cver_bld;
     }
 
-    public void setC3_video_isLive(String c3_video_isLive) {
+    public void setC3_video_isLive(int c3_video_isLive) {
         this.c3_video_isLive = c3_video_isLive;
     }
 
