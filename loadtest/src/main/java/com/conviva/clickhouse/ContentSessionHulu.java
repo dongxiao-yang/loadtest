@@ -118,6 +118,8 @@ public class ContentSessionHulu {
     public int switch_seekJoinTimeMs;
     public int switch_seekJoinCount;
     public String switch_pcpBuckets1Min = "[]";
+    public String switch_pcpStartBuckets1Min = "[]";
+    public String switch_pcpEndBuckets1Min = "[]";
     public long switch_pcpIntervals;
     public int switch_rebufferingTimeMsRaw;
     public int switch_networkRebufferingTimeMsRaw;
@@ -600,6 +602,14 @@ public class ContentSessionHulu {
 
     public void setSwitch_pcpBuckets1Min(String switch_pcpBuckets1Min) {
         this.switch_pcpBuckets1Min = switch_pcpBuckets1Min;
+    }
+
+    public void setSwitch_pcpStartBuckets1Min(String switch_pcpStartBuckets1Min) {
+        this.switch_pcpStartBuckets1Min = switch_pcpStartBuckets1Min;
+    }
+
+    public void setSwitch_pcpEndBuckets1Min(String switch_pcpEndBuckets1Min) {
+        this.switch_pcpEndBuckets1Min = switch_pcpEndBuckets1Min;
     }
 
     public void setSwitch_pcpIntervals(long switch_pcpIntervals) {
@@ -1245,6 +1255,8 @@ public class ContentSessionHulu {
                 .append(switch_seekJoinTimeMs).append(DEFAULT_SEPARATOR)
                 .append(switch_seekJoinCount).append(DEFAULT_SEPARATOR)
                 .append(switch_pcpBuckets1Min).append(DEFAULT_SEPARATOR)
+                .append(switch_pcpStartBuckets1Min).append(DEFAULT_SEPARATOR)
+                .append(switch_pcpEndBuckets1Min).append(DEFAULT_SEPARATOR)
                 .append(switch_pcpIntervals).append(DEFAULT_SEPARATOR)
                 .append(switch_rebufferingTimeMsRaw).append(DEFAULT_SEPARATOR)
                 .append(switch_networkRebufferingTimeMsRaw).append(DEFAULT_SEPARATOR)
