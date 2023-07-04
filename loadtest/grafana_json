@@ -1598,7 +1598,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "100 - (avg by(instance) (irate(node_cpu_seconds_total{mode=\"idle\" ,cluster=\"\"}[10m])) * 100)",
+          "expr": "100 - (avg by(instance) (irate(node_cpu_seconds_total{mode=\"idle\" ,cluster=\"OLAP-AA-Clickhouse\"}[10m])) * 100)",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -3314,12 +3314,12 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "olap dashboard new",
   "uid": "ja9Q3o94k",
-  "version": 29
+  "version": 30
 }
