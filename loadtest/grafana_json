@@ -1934,7 +1934,7 @@
           "refId": "A"
         }
       ],
-      "title": "Disk read bytes ",
+      "title": "disk read bytes ",
       "type": "timeseries"
     },
     {
@@ -2014,11 +2014,11 @@
           "exemplar": true,
           "expr": "node_filesystem_avail_bytes{cluster=\"OLAP-AA-Clickhouse\" , mountpoint=~\"/conviva/data/nvme.*\"}",
           "interval": "",
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{instance}}-{{mountpoint}}",
           "refId": "A"
         }
       ],
-      "title": "avail space",
+      "title": "disk avail space",
       "type": "timeseries"
     },
     {
@@ -3458,5 +3458,5 @@
   "timezone": "",
   "title": "olap dashboard new",
   "uid": "ja9Q3o94k",
-  "version": 35
+  "version": 38
 }
