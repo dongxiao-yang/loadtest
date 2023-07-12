@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 170,
   "links": [],
   "panels": [
     {
@@ -37,35 +36,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -85,24 +56,39 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 5,
         "w": 5,
         "x": 0,
         "y": 1
       },
       "id": 12,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single"
-        }
+        "showThresholdLabels": false,
+        "showThresholdMarkers": false,
+        "text": {}
       },
+      "pluginVersion": "8.0.3",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(clickhouse_node_alive{cluster=\"OLAP-AA-Clickhouse\"})",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
       "title": "clickhouse server online",
-      "type": "timeseries"
+      "type": "gauge"
     },
     {
       "datasource": null,
@@ -181,35 +167,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -229,59 +187,43 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 5,
         "w": 5,
         "x": 10,
         "y": 1
       },
       "id": 18,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single"
-        }
+        "showThresholdLabels": false,
+        "showThresholdMarkers": false,
+        "text": {}
       },
+      "pluginVersion": "8.0.3",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(clickhouse_table_count{cluster=\"OLAP-AA-Clickhouse\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
       "title": "table number",
-      "type": "timeseries"
+      "type": "gauge"
     },
     {
       "datasource": null,
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -296,29 +238,42 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 5,
         "w": 5,
         "x": 15,
         "y": 1
       },
       "id": 20,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single"
-        }
+        "showThresholdLabels": false,
+        "showThresholdMarkers": false,
+        "text": {}
       },
+      "pluginVersion": "8.0.3",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(clickhouse_row_count{cluster=\"OLAP-AA-Clickhouse\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
       "title": "row count",
-      "type": "timeseries"
+      "type": "gauge"
     },
     {
       "datasource": null,
@@ -376,7 +331,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 4
+        "y": 6
       },
       "id": 52,
       "options": {
@@ -448,7 +403,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 4
+        "y": 6
       },
       "id": 50,
       "options": {
@@ -520,7 +475,7 @@
         "h": 5,
         "w": 17,
         "x": 0,
-        "y": 12
+        "y": 14
       },
       "id": 28,
       "options": {
@@ -553,7 +508,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 19
       },
       "id": 42,
       "panels": [],
@@ -617,7 +572,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 20
       },
       "id": 44,
       "options": {
@@ -699,7 +654,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 20
       },
       "id": 48,
       "options": {
@@ -781,7 +736,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 26
+        "y": 28
       },
       "id": 40,
       "options": {
@@ -863,7 +818,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 26
+        "y": 28
       },
       "id": 38,
       "options": {
@@ -895,7 +850,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 36
       },
       "id": 16,
       "panels": [],
@@ -958,7 +913,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 35
+        "y": 37
       },
       "id": 4,
       "options": {
@@ -993,6 +948,22 @@
           "intervalFactor": 1,
           "legendFormat": "p99",
           "refId": "p99"
+        },
+        {
+          "exemplar": true,
+          "expr": "max(clickhouse_query_time_p99{job=\"olap_monitor\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "p99_new",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "max(clickhouse_query_time_p95{job=\"olap_monitor\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "p95_new",
+          "refId": "B"
         }
       ],
       "title": "query_response_percentile (ms)",
@@ -1054,7 +1025,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 35
+        "y": 37
       },
       "id": 30,
       "options": {
@@ -1135,7 +1106,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 45
       },
       "id": 32,
       "options": {
@@ -1233,7 +1204,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 45
       },
       "id": 26,
       "options": {
@@ -1314,7 +1285,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 51
+        "y": 53
       },
       "id": 24,
       "options": {
@@ -1347,7 +1318,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 59
+        "y": 61
       },
       "id": 14,
       "panels": [],
@@ -1410,7 +1381,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 60
+        "y": 62
       },
       "id": 34,
       "options": {
@@ -1491,19 +1462,33 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 60
+        "y": 62
       },
       "id": 36,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
+          "calcs": [
+            "last",
+            "min",
+            "max"
+          ],
+          "displayMode": "table",
           "placement": "bottom"
         },
         "tooltip": {
           "mode": "single"
         }
       },
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum by (errorName) (rate (clickhouse_system_error{cluster=\"OLAP-AA-Clickhouse\",job=\"olap_monitor\"}[5m])) * 60",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "{{errorName}}",
+          "refId": "A"
+        }
+      ],
       "title": "clickhouse errors",
       "type": "timeseries"
     },
@@ -1514,7 +1499,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 68
+        "y": 70
       },
       "id": 70,
       "panels": [],
@@ -1578,7 +1563,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 69
+        "y": 71
       },
       "id": 8,
       "options": {
@@ -1660,7 +1645,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 69
+        "y": 71
       },
       "id": 10,
       "options": {
@@ -1741,7 +1726,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 77
+        "y": 79
       },
       "id": 94,
       "options": {
@@ -1762,7 +1747,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "node_load1{cluster=\"\"}",
+          "expr": "node_load1{cluster=\"OLAP-AA-Clickhouse\"}",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1830,7 +1815,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 77
+        "y": 79
       },
       "id": 96,
       "options": {
@@ -1912,7 +1897,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 85
+        "y": 87
       },
       "id": 46,
       "options": {
@@ -1994,7 +1979,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 85
+        "y": 87
       },
       "id": 98,
       "options": {
@@ -2077,7 +2062,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 93
+        "y": 95
       },
       "id": 54,
       "options": {
@@ -2166,7 +2151,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 93
+        "y": 95
       },
       "id": 58,
       "options": {
@@ -2247,7 +2232,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 101
+        "y": 103
       },
       "id": 72,
       "options": {
@@ -2328,7 +2313,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 101
+        "y": 103
       },
       "id": 78,
       "options": {
@@ -2418,7 +2403,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 109
+        "y": 111
       },
       "id": 74,
       "options": {
@@ -2500,7 +2485,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 109
+        "y": 111
       },
       "id": 76,
       "options": {
@@ -2532,7 +2517,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 117
+        "y": 119
       },
       "id": 62,
       "panels": [
@@ -3093,7 +3078,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 118
+        "y": 120
       },
       "id": 84,
       "panels": [
@@ -3436,7 +3421,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 119
+        "y": 121
       },
       "id": 56,
       "panels": [],
@@ -3451,12 +3436,12 @@
     "list": []
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "olap dashboard new",
-  "uid": "ja9Q3o94k",
-  "version": 38
+  "title": "olap-dashboard",
+  "uid": "ja9Q3o95k",
+  "version": 1
 }
